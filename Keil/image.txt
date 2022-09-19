@@ -1,0 +1,946 @@
+
+========================================================================
+
+** ELF Header Information
+
+    File Name: .\cm0.axf
+
+    Machine class: ELFCLASS32 (32-bit)
+    Data encoding: ELFDATA2LSB (Little endian)
+    Header version: EV_CURRENT (Current version)
+    Operating System ABI: none
+    ABI Version: 0
+    File Type: ET_EXEC (Executable) (2)
+    Machine: EM_ARM (ARM)
+
+    Image Entry point: 0x00000061
+    Flags: EF_ARM_HASENTRY + EF_ARM_ABI_FLOAT_SOFT (0x05000202)
+
+    ARM ELF revision: 5 (ABI version 2)
+
+    Conforms to Soft float procedure-call standard
+
+    Built with
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armasm [4d35ec]
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+    Header size: 52 bytes (0x34)
+    Program header entry size: 32 bytes (0x20)
+    Section header entry size: 40 bytes (0x28)
+
+    Program header entries: 1
+    Section header entries: 16
+
+    Program header offset: 41804 (0x0000a34c)
+    Section header offset: 41836 (0x0000a36c)
+
+    Section header string table index: 15
+
+========================================================================
+
+** Program header #0
+
+    Type          : PT_LOAD (1)
+    File Offset   : 52 (0x34)
+    Virtual Addr  : 0x00000000
+    Physical Addr : 0x00000000
+    Size in file  : 992 bytes (0x3e0)
+    Size in memory: 2016 bytes (0x7e0)
+    Flags         : PF_X + PF_W + PF_R + PF_ARM_ENTRY (0x80000007)
+    Alignment     : 8
+
+
+========================================================================
+
+** Section #1
+
+    Name        : ER_IROM1
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : SHF_ALLOC + SHF_EXECINSTR (0x00000006)
+    Addr        : 0x00000000
+    File Offset : 52 (0x34)
+    Size        : 984 bytes (0x3d8)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 4
+    Entry Size  : 0
+
+    $d.realdata
+    RESET
+    __Vectors
+        0x00000000:    20000408    ...     DCD    536871944
+        0x00000004:    00000075    u...    DCD    117
+        0x00000008:    00000081    ....    DCD    129
+        0x0000000c:    00000089    ....    DCD    137
+        0x00000010:    00000091    ....    DCD    145
+        0x00000014:    00000099    ....    DCD    153
+        0x00000018:    000000a1    ....    DCD    161
+        0x0000001c:    00000000    ....    DCD    0
+        0x00000020:    00000000    ....    DCD    0
+        0x00000024:    00000000    ....    DCD    0
+        0x00000028:    00000000    ....    DCD    0
+        0x0000002c:    000000a9    ....    DCD    169
+        0x00000030:    000000b1    ....    DCD    177
+        0x00000034:    00000000    ....    DCD    0
+        0x00000038:    000000b9    ....    DCD    185
+        0x0000003c:    000000c1    ....    DCD    193
+        0x00000040:    000000d1    ....    DCD    209
+        0x00000044:    000000c9    ....    DCD    201
+        0x00000048:    000000d9    ....    DCD    217
+        0x0000004c:    000000e1    ....    DCD    225
+        0x00000050:    000000e9    ....    DCD    233
+        0x00000054:    000000f1    ....    DCD    241
+        0x00000058:    000000f9    ....    DCD    249
+        0x0000005c:    00000101    ....    DCD    257
+    $t
+    .ARM.Collect$$$$00000000
+    .ARM.Collect$$$$00000001
+    __Vectors_End
+    __main
+    _main_stk
+        0x00000060:    4803        .H      LDR      r0,__lit__00000000 ; [0x70] = 0x20000408
+        0x00000062:    4685        .F      MOV      sp,r0
+    .ARM.Collect$$$$00000004
+    _main_scatterload
+        0x00000064:    f000f854    ..T.    BL       __scatterload ; 0x110
+    .ARM.Collect$$$$00000008
+    .ARM.Collect$$$$0000000A
+    .ARM.Collect$$$$0000000B
+    __main_after_scatterload
+    _main_clock
+    _main_cpp_init
+    _main_init
+        0x00000068:    4800        .H      LDR      r0,[pc,#0] ; [0x6c] = 0x2d1
+        0x0000006a:    4700        .G      BX       r0
+    $d
+        0x0000006c:    000002d1    ....    DCD    721
+    .ARM.Collect$$$$00002712
+    __lit__00000000
+    .ARM.Collect$$$$0000000D
+    .ARM.Collect$$$$0000000F
+    __rt_final_cpp
+    __rt_final_exit
+        0x00000070:    20000408    ...     DCD    536871944
+    $t
+    .text
+    Reset_Handler
+        0x00000074:    4824        $H      LDR      r0,[pc,#144] ; [0x108] = 0x1f9
+        0x00000076:    4680        .F      MOV      r8,r0
+        0x00000078:    46c1        .F      MOV      r9,r8
+        0x0000007a:    4780        .G      BLX      r0
+        0x0000007c:    4823        #H      LDR      r0,[pc,#140] ; [0x10c] = 0x61
+        0x0000007e:    4700        .G      BX       r0
+    NMI_Handler
+        0x00000080:    b500        ..      PUSH     {lr}
+        0x00000082:    f000f898    ....    BL       NMIHandler ; 0x1b6
+        0x00000086:    bd00        ..      POP      {pc}
+    HardFault_Handler
+        0x00000088:    b500        ..      PUSH     {lr}
+        0x0000008a:    f000f855    ..U.    BL       HardFaultHandler ; 0x138
+        0x0000008e:    bd00        ..      POP      {pc}
+    MemManage_Handler
+        0x00000090:    b500        ..      PUSH     {lr}
+        0x00000092:    f000f88f    ....    BL       MemManageHandler ; 0x1b4
+        0x00000096:    bd00        ..      POP      {pc}
+    BusFault_Handler
+        0x00000098:    b500        ..      PUSH     {lr}
+        0x0000009a:    f000f84b    ..K.    BL       BusFaultHandler ; 0x134
+        0x0000009e:    bd00        ..      POP      {pc}
+    UsageFault_Handler
+        0x000000a0:    b500        ..      PUSH     {lr}
+        0x000000a2:    f000f8dc    ....    BL       UsageFaultHandler ; 0x25e
+        0x000000a6:    bd00        ..      POP      {pc}
+    SVC_Handler
+        0x000000a8:    b500        ..      PUSH     {lr}
+        0x000000aa:    f000f890    ....    BL       SVCHandler ; 0x1ce
+        0x000000ae:    bd00        ..      POP      {pc}
+    DebugMon_Handler
+        0x000000b0:    b500        ..      PUSH     {lr}
+        0x000000b2:    f000f840    ..@.    BL       DebugMonHandler ; 0x136
+        0x000000b6:    bd00        ..      POP      {pc}
+    PendSV_Handler
+        0x000000b8:    b500        ..      PUSH     {lr}
+        0x000000ba:    f000f887    ....    BL       PendSVHandler ; 0x1cc
+        0x000000be:    bd00        ..      POP      {pc}
+    SysTick_Handler
+        0x000000c0:    b500        ..      PUSH     {lr}
+        0x000000c2:    f000f88b    ....    BL       SysTickHandler ; 0x1dc
+        0x000000c6:    bd00        ..      POP      {pc}
+    UARTRX_Handler
+        0x000000c8:    b500        ..      PUSH     {lr}
+        0x000000ca:    f000f8b6    ....    BL       UARTRXHandler ; 0x23a
+        0x000000ce:    bd00        ..      POP      {pc}
+    UARTTX_Handler
+        0x000000d0:    b500        ..      PUSH     {lr}
+        0x000000d2:    f000f8bb    ....    BL       UARTTXHandler ; 0x24c
+        0x000000d6:    bd00        ..      POP      {pc}
+    UARTOVR_Handler
+        0x000000d8:    b500        ..      PUSH     {lr}
+        0x000000da:    f000f8ad    ....    BL       UARTOVRHandler ; 0x238
+        0x000000de:    bd00        ..      POP      {pc}
+    KEY0_Handler
+        0x000000e0:    b507        ..      PUSH     {r0-r2,lr}
+        0x000000e2:    f000f82a    ..*.    BL       KEY0 ; 0x13a
+        0x000000e6:    bd07        ..      POP      {r0-r2,pc}
+    KEY1_Handler
+        0x000000e8:    b507        ..      PUSH     {r0-r2,lr}
+        0x000000ea:    f000f82b    ..+.    BL       KEY1 ; 0x144
+        0x000000ee:    bd07        ..      POP      {r0-r2,pc}
+    KEY2_Handler
+        0x000000f0:    b507        ..      PUSH     {r0-r2,lr}
+        0x000000f2:    f000f82c    ..,.    BL       KEY2 ; 0x14e
+        0x000000f6:    bd07        ..      POP      {r0-r2,pc}
+    KEY3_Handler
+        0x000000f8:    b507        ..      PUSH     {r0-r2,lr}
+        0x000000fa:    f000f82d    ..-.    BL       KEY3 ; 0x158
+        0x000000fe:    bd07        ..      POP      {r0-r2,pc}
+    TIMER_Handler
+        0x00000100:    b507        ..      PUSH     {r0-r2,lr}
+        0x00000102:    f000f887    ....    BL       Timer_Handler ; 0x214
+        0x00000106:    bd07        ..      POP      {r0-r2,pc}
+    $d
+        0x00000108:    000001f9    ....    DCD    505
+        0x0000010c:    00000061    a...    DCD    97
+    $t
+    .text
+    __scatterload
+    __scatterload_rt2
+        0x00000110:    4c06        .L      LDR      r4,[pc,#24] ; [0x12c] = 0x3b8
+        0x00000112:    2501        .%      MOVS     r5,#1
+        0x00000114:    4e06        .N      LDR      r6,[pc,#24] ; [0x130] = 0x3d8
+        0x00000116:    e005        ..      B        0x124 ; __scatterload + 20
+        0x00000118:    68e3        .h      LDR      r3,[r4,#0xc]
+        0x0000011a:    cc07        ..      LDM      r4!,{r0-r2}
+        0x0000011c:    432b        +C      ORRS     r3,r3,r5
+        0x0000011e:    3c0c        .<      SUBS     r4,r4,#0xc
+        0x00000120:    4798        .G      BLX      r3
+        0x00000122:    3410        .4      ADDS     r4,r4,#0x10
+        0x00000124:    42b4        .B      CMP      r4,r6
+        0x00000126:    d3f7        ..      BCC      0x118 ; __scatterload + 8
+        0x00000128:    f7ffff9e    ....    BL       __main_after_scatterload ; 0x68
+    $d
+        0x0000012c:    000003b8    ....    DCD    952
+        0x00000130:    000003d8    ....    DCD    984
+    $t
+    i.BusFaultHandler
+    BusFaultHandler
+        0x00000134:    4770        pG      BX       lr
+    i.DebugMonHandler
+    DebugMonHandler
+        0x00000136:    4770        pG      BX       lr
+    i.HardFaultHandler
+    HardFaultHandler
+        0x00000138:    4770        pG      BX       lr
+    i.KEY0
+    KEY0
+        0x0000013a:    b510        ..      PUSH     {r4,lr}
+        0x0000013c:    2000        .       MOVS     r0,#0
+        0x0000013e:    f000f81d    ....    BL       LED_toggle ; 0x17c
+        0x00000142:    bd10        ..      POP      {r4,pc}
+    i.KEY1
+    KEY1
+        0x00000144:    b510        ..      PUSH     {r4,lr}
+        0x00000146:    2001        .       MOVS     r0,#1
+        0x00000148:    f000f818    ....    BL       LED_toggle ; 0x17c
+        0x0000014c:    bd10        ..      POP      {r4,pc}
+    i.KEY2
+    KEY2
+        0x0000014e:    b510        ..      PUSH     {r4,lr}
+        0x00000150:    2002        .       MOVS     r0,#2
+        0x00000152:    f000f813    ....    BL       LED_toggle ; 0x17c
+        0x00000156:    bd10        ..      POP      {r4,pc}
+    i.KEY3
+    KEY3
+        0x00000158:    b510        ..      PUSH     {r4,lr}
+        0x0000015a:    2003        .       MOVS     r0,#3
+        0x0000015c:    f000f80e    ....    BL       LED_toggle ; 0x17c
+        0x00000160:    bd10        ..      POP      {r4,pc}
+        0x00000162:    0000        ..      MOVS     r0,r0
+    i.LED_on
+    LED_on
+        0x00000164:    2100        .!      MOVS     r1,#0
+        0x00000166:    4a04        .J      LDR      r2,[pc,#16] ; [0x178] = 0x40001000
+        0x00000168:    6811        .h      LDR      r1,[r2,#0]
+        0x0000016a:    2201        ."      MOVS     r2,#1
+        0x0000016c:    4082        .@      LSLS     r2,r2,r0
+        0x0000016e:    430a        .C      ORRS     r2,r2,r1
+        0x00000170:    4b01        .K      LDR      r3,[pc,#4] ; [0x178] = 0x40001000
+        0x00000172:    601a        .`      STR      r2,[r3,#0]
+        0x00000174:    4770        pG      BX       lr
+    $d
+        0x00000176:    0000        ..      DCW    0
+        0x00000178:    40001000    ...@    DCD    1073745920
+    $t
+    i.LED_toggle
+    LED_toggle
+        0x0000017c:    b530        0.      PUSH     {r4,r5,lr}
+        0x0000017e:    4602        .F      MOV      r2,r0
+        0x00000180:    2000        .       MOVS     r0,#0
+        0x00000182:    2100        .!      MOVS     r1,#0
+        0x00000184:    2300        .#      MOVS     r3,#0
+        0x00000186:    4c0a        .L      LDR      r4,[pc,#40] ; [0x1b0] = 0x40001000
+        0x00000188:    6821        !h      LDR      r1,[r4,#0]
+        0x0000018a:    2401        .$      MOVS     r4,#1
+        0x0000018c:    4094        .@      LSLS     r4,r4,r2
+        0x0000018e:    4620         F      MOV      r0,r4
+        0x00000190:    4604        .F      MOV      r4,r0
+        0x00000192:    400c        .@      ANDS     r4,r4,r1
+        0x00000194:    4623        #F      MOV      r3,r4
+        0x00000196:    2b00        .+      CMP      r3,#0
+        0x00000198:    d104        ..      BNE      0x1a4 ; LED_toggle + 40
+        0x0000019a:    460c        .F      MOV      r4,r1
+        0x0000019c:    4304        .C      ORRS     r4,r4,r0
+        0x0000019e:    4d04        .M      LDR      r5,[pc,#16] ; [0x1b0] = 0x40001000
+        0x000001a0:    602c        ,`      STR      r4,[r5,#0]
+        0x000001a2:    e003        ..      B        0x1ac ; LED_toggle + 48
+        0x000001a4:    460c        .F      MOV      r4,r1
+        0x000001a6:    4384        .C      BICS     r4,r4,r0
+        0x000001a8:    4d01        .M      LDR      r5,[pc,#4] ; [0x1b0] = 0x40001000
+        0x000001aa:    602c        ,`      STR      r4,[r5,#0]
+        0x000001ac:    bd30        0.      POP      {r4,r5,pc}
+    $d
+        0x000001ae:    0000        ..      DCW    0
+        0x000001b0:    40001000    ...@    DCD    1073745920
+    $t
+    i.MemManageHandler
+    MemManageHandler
+        0x000001b4:    4770        pG      BX       lr
+    i.NMIHandler
+    NMIHandler
+        0x000001b6:    4770        pG      BX       lr
+    i.NVIC_EnableIRQ
+    NVIC_EnableIRQ
+        0x000001b8:    06c2        ..      LSLS     r2,r0,#27
+        0x000001ba:    0ed2        ..      LSRS     r2,r2,#27
+        0x000001bc:    2101        .!      MOVS     r1,#1
+        0x000001be:    4091        .@      LSLS     r1,r1,r2
+        0x000001c0:    4a01        .J      LDR      r2,[pc,#4] ; [0x1c8] = 0xe000e100
+        0x000001c2:    6011        .`      STR      r1,[r2,#0]
+        0x000001c4:    4770        pG      BX       lr
+    $d
+        0x000001c6:    0000        ..      DCW    0
+        0x000001c8:    e000e100    ....    DCD    3758153984
+    $t
+    i.PendSVHandler
+    PendSVHandler
+        0x000001cc:    4770        pG      BX       lr
+    i.SVCHandler
+    SVCHandler
+        0x000001ce:    4770        pG      BX       lr
+    i.Set_SysTick_CTRL
+    Set_SysTick_CTRL
+        0x000001d0:    4901        .I      LDR      r1,[pc,#4] ; [0x1d8] = 0xe000e000
+        0x000001d2:    6108        .a      STR      r0,[r1,#0x10]
+        0x000001d4:    4770        pG      BX       lr
+    $d
+        0x000001d6:    0000        ..      DCW    0
+        0x000001d8:    e000e000    ....    DCD    3758153728
+    $t
+    i.SysTickHandler
+    SysTickHandler
+        0x000001dc:    b510        ..      PUSH     {r4,lr}
+        0x000001de:    2000        .       MOVS     r0,#0
+        0x000001e0:    f7fffff6    ....    BL       Set_SysTick_CTRL ; 0x1d0
+        0x000001e4:    4803        .H      LDR      r0,[pc,#12] ; [0x1f4] = 0xe000ed00
+        0x000001e6:    6840        @h      LDR      r0,[r0,#4]
+        0x000001e8:    2101        .!      MOVS     r1,#1
+        0x000001ea:    0649        I.      LSLS     r1,r1,#25
+        0x000001ec:    4308        .C      ORRS     r0,r0,r1
+        0x000001ee:    4901        .I      LDR      r1,[pc,#4] ; [0x1f4] = 0xe000ed00
+        0x000001f0:    6048        H`      STR      r0,[r1,#4]
+        0x000001f2:    bd10        ..      POP      {r4,pc}
+    $d
+        0x000001f4:    e000ed00    ....    DCD    3758157056
+    $t
+    i.SystemInit
+    SystemInit
+        0x000001f8:    4770        pG      BX       lr
+        0x000001fa:    0000        ..      MOVS     r0,r0
+    i.TIMER_Init
+    TIMER_Init
+        0x000001fc:    2207        ."      MOVS     r2,#7
+        0x000001fe:    4b04        .K      LDR      r3,[pc,#16] ; [0x210] = 0x40003000
+        0x00000200:    601a        .`      STR      r2,[r3,#0]
+        0x00000202:    2200        ."      MOVS     r2,#0
+        0x00000204:    605a        Z`      STR      r2,[r3,#4]
+        0x00000206:    461a        .F      MOV      r2,r3
+        0x00000208:    6090        .`      STR      r0,[r2,#8]
+        0x0000020a:    6111        .a      STR      r1,[r2,#0x10]
+        0x0000020c:    4770        pG      BX       lr
+    $d
+        0x0000020e:    0000        ..      DCW    0
+        0x00000210:    40003000    .0.@    DCD    1073754112
+    $t
+    i.Timer_Handler
+    Timer_Handler
+        0x00000214:    b510        ..      PUSH     {r4,lr}
+        0x00000216:    2007        .       MOVS     r0,#7
+        0x00000218:    f7ffffb0    ....    BL       LED_toggle ; 0x17c
+        0x0000021c:    a001        ..      ADR      r0,{pc}+8 ; 0x224
+        0x0000021e:    f000f81f    ....    BL       __0printf$bare ; 0x260
+        0x00000222:    bd10        ..      POP      {r4,pc}
+    $d
+        0x00000224:    656d6974    time    DCD    1701669236
+        0x00000228:    6e692072    r in    DCD    1852383346
+        0x0000022c:    636f2074    t oc    DCD    1668227188
+        0x00000230:    21727563    cur!    DCD    561149283
+        0x00000234:    000a2121    !!..    DCD    663841
+    $t
+    i.UARTOVRHandler
+    UARTOVRHandler
+        0x00000238:    4770        pG      BX       lr
+    i.UARTRXHandler
+    UARTRXHandler
+        0x0000023a:    b510        ..      PUSH     {r4,lr}
+        0x0000023c:    2001        .       MOVS     r0,#1
+        0x0000023e:    0780        ..      LSLS     r0,r0,#30
+        0x00000240:    f000f87c    ..|.    BL       uart_ClearRxIRQ ; 0x33c
+        0x00000244:    2001        .       MOVS     r0,#1
+        0x00000246:    f7ffff99    ....    BL       LED_toggle ; 0x17c
+        0x0000024a:    bd10        ..      POP      {r4,pc}
+    i.UARTTXHandler
+    UARTTXHandler
+        0x0000024c:    b510        ..      PUSH     {r4,lr}
+        0x0000024e:    2001        .       MOVS     r0,#1
+        0x00000250:    0780        ..      LSLS     r0,r0,#30
+        0x00000252:    f000f876    ..v.    BL       uart_ClearTxIRQ ; 0x342
+        0x00000256:    2002        .       MOVS     r0,#2
+        0x00000258:    f7ffff90    ....    BL       LED_toggle ; 0x17c
+        0x0000025c:    bd10        ..      POP      {r4,pc}
+    i.UsageFaultHandler
+    UsageFaultHandler
+        0x0000025e:    4770        pG      BX       lr
+    i.__0printf$bare
+    __0printf$bare
+    __1printf$bare
+    __2printf
+        0x00000260:    b510        ..      PUSH     {r4,lr}
+        0x00000262:    4a02        .J      LDR      r2,[pc,#8] ; [0x26c] = 0x2b1
+        0x00000264:    4902        .I      LDR      r1,[pc,#8] ; [0x270] = 0x20000000
+        0x00000266:    f000f814    ....    BL       _printf_core ; 0x292
+        0x0000026a:    bd10        ..      POP      {r4,pc}
+    $d
+        0x0000026c:    000002b1    ....    DCD    689
+        0x00000270:    20000000    ...     DCD    536870912
+    $t
+    i.__scatterload_copy
+    __scatterload_copy
+        0x00000274:    e002        ..      B        0x27c ; __scatterload_copy + 8
+        0x00000276:    c808        ..      LDM      r0!,{r3}
+        0x00000278:    1f12        ..      SUBS     r2,r2,#4
+        0x0000027a:    c108        ..      STM      r1!,{r3}
+        0x0000027c:    2a00        .*      CMP      r2,#0
+        0x0000027e:    d1fa        ..      BNE      0x276 ; __scatterload_copy + 2
+        0x00000280:    4770        pG      BX       lr
+    i.__scatterload_null
+    __scatterload_null
+        0x00000282:    4770        pG      BX       lr
+    i.__scatterload_zeroinit
+    __scatterload_zeroinit
+        0x00000284:    2000        .       MOVS     r0,#0
+        0x00000286:    e001        ..      B        0x28c ; __scatterload_zeroinit + 8
+        0x00000288:    c101        ..      STM      r1!,{r0}
+        0x0000028a:    1f12        ..      SUBS     r2,r2,#4
+        0x0000028c:    2a00        .*      CMP      r2,#0
+        0x0000028e:    d1fb        ..      BNE      0x288 ; __scatterload_zeroinit + 4
+        0x00000290:    4770        pG      BX       lr
+    i._printf_core
+    _printf_core
+        0x00000292:    b5f8        ..      PUSH     {r3-r7,lr}
+        0x00000294:    4616        .F      MOV      r6,r2
+        0x00000296:    460f        .F      MOV      r7,r1
+        0x00000298:    4604        .F      MOV      r4,r0
+        0x0000029a:    2500        .%      MOVS     r5,#0
+        0x0000029c:    e003        ..      B        0x2a6 ; _printf_core + 20
+        0x0000029e:    4639        9F      MOV      r1,r7
+        0x000002a0:    47b0        .G      BLX      r6
+        0x000002a2:    1c64        d.      ADDS     r4,r4,#1
+        0x000002a4:    1c6d        m.      ADDS     r5,r5,#1
+        0x000002a6:    7820         x      LDRB     r0,[r4,#0]
+        0x000002a8:    2800        .(      CMP      r0,#0
+        0x000002aa:    d1f8        ..      BNE      0x29e ; _printf_core + 12
+        0x000002ac:    4628        (F      MOV      r0,r5
+        0x000002ae:    bdf8        ..      POP      {r3-r7,pc}
+    i.fputc
+    fputc
+        0x000002b0:    b570        p.      PUSH     {r4-r6,lr}
+        0x000002b2:    4604        .F      MOV      r4,r0
+        0x000002b4:    460d        .F      MOV      r5,r1
+        0x000002b6:    2c0a        .,      CMP      r4,#0xa
+        0x000002b8:    d103        ..      BNE      0x2c2 ; fputc + 18
+        0x000002ba:    210d        .!      MOVS     r1,#0xd
+        0x000002bc:    0740        @.      LSLS     r0,r0,#29
+        0x000002be:    f000f843    ..C.    BL       uart_SendChar ; 0x348
+        0x000002c2:    b2e1        ..      UXTB     r1,r4
+        0x000002c4:    2001        .       MOVS     r0,#1
+        0x000002c6:    0780        ..      LSLS     r0,r0,#30
+        0x000002c8:    f000f83e    ..>.    BL       uart_SendChar ; 0x348
+        0x000002cc:    4620         F      MOV      r0,r4
+        0x000002ce:    bd70        p.      POP      {r4-r6,pc}
+    i.main
+    main
+        0x000002d0:    b51f        ..      PUSH     {r0-r4,lr}
+        0x000002d2:    2000        .       MOVS     r0,#0
+        0x000002d4:    f7ffff46    ..F.    BL       LED_on ; 0x164
+        0x000002d8:    2001        .       MOVS     r0,#1
+        0x000002da:    f7ffff43    ..C.    BL       LED_on ; 0x164
+        0x000002de:    2002        .       MOVS     r0,#2
+        0x000002e0:    f7ffff40    ..@.    BL       LED_on ; 0x164
+        0x000002e4:    2003        .       MOVS     r0,#3
+        0x000002e6:    f7ffff3d    ..=.    BL       LED_on ; 0x164
+        0x000002ea:    200f        .       MOVS     r0,#0xf
+        0x000002ec:    4911        .I      LDR      r1,[pc,#68] ; [0x334] = 0x40002000
+        0x000002ee:    6048        H`      STR      r0,[r1,#4]
+        0x000002f0:    2003        .       MOVS     r0,#3
+        0x000002f2:    f7ffff61    ..a.    BL       NVIC_EnableIRQ ; 0x1b8
+        0x000002f6:    2004        .       MOVS     r0,#4
+        0x000002f8:    f7ffff5e    ..^.    BL       NVIC_EnableIRQ ; 0x1b8
+        0x000002fc:    2005        .       MOVS     r0,#5
+        0x000002fe:    f7ffff5b    ..[.    BL       NVIC_EnableIRQ ; 0x1b8
+        0x00000302:    2006        .       MOVS     r0,#6
+        0x00000304:    f7ffff58    ..X.    BL       NVIC_EnableIRQ ; 0x1b8
+        0x00000308:    2100        .!      MOVS     r1,#0
+        0x0000030a:    480b        .H      LDR      r0,[pc,#44] ; [0x338] = 0x2faf080
+        0x0000030c:    f7ffff76    ..v.    BL       TIMER_Init ; 0x1fc
+        0x00000310:    2007        .       MOVS     r0,#7
+        0x00000312:    f7ffff51    ..Q.    BL       NVIC_EnableIRQ ; 0x1b8
+        0x00000316:    2000        .       MOVS     r0,#0
+        0x00000318:    9000        ..      STR      r0,[sp,#0]
+        0x0000031a:    9001        ..      STR      r0,[sp,#4]
+        0x0000031c:    9002        ..      STR      r0,[sp,#8]
+        0x0000031e:    2301        .#      MOVS     r3,#1
+        0x00000320:    461a        .F      MOV      r2,r3
+        0x00000322:    21ff        .!      MOVS     r1,#0xff
+        0x00000324:    31b3        .1      ADDS     r1,r1,#0xb3
+        0x00000326:    9003        ..      STR      r0,[sp,#0xc]
+        0x00000328:    0748        H.      LSLS     r0,r1,#29
+        0x0000032a:    f000f818    ....    BL       uart_init ; 0x35e
+        0x0000032e:    bf00        ..      NOP      
+        0x00000330:    e7fe        ..      B        0x330 ; main + 96
+    $d
+        0x00000332:    0000        ..      DCW    0
+        0x00000334:    40002000    . .@    DCD    1073750016
+        0x00000338:    02faf080    ....    DCD    50000000
+    $t
+    i.uart_ClearRxIRQ
+    uart_ClearRxIRQ
+        0x0000033c:    2102        .!      MOVS     r1,#2
+        0x0000033e:    60c1        .`      STR      r1,[r0,#0xc]
+        0x00000340:    4770        pG      BX       lr
+    i.uart_ClearTxIRQ
+    uart_ClearTxIRQ
+        0x00000342:    2101        .!      MOVS     r1,#1
+        0x00000344:    60c1        .`      STR      r1,[r0,#0xc]
+        0x00000346:    4770        pG      BX       lr
+    i.uart_SendChar
+    uart_SendChar
+        0x00000348:    e005        ..      B        0x356 ; uart_SendChar + 14
+        0x0000034a:    6842        Bh      LDR      r2,[r0,#4]
+        0x0000034c:    07d2        ..      LSLS     r2,r2,#31
+        0x0000034e:    0fd2        ..      LSRS     r2,r2,#31
+        0x00000350:    2a00        .*      CMP      r2,#0
+        0x00000352:    d100        ..      BNE      0x356 ; uart_SendChar + 14
+        0x00000354:    e000        ..      B        0x358 ; uart_SendChar + 16
+        0x00000356:    e7f8        ..      B        0x34a ; uart_SendChar + 2
+        0x00000358:    bf00        ..      NOP      
+        0x0000035a:    6001        .`      STR      r1,[r0,#0]
+        0x0000035c:    4770        pG      BX       lr
+    i.uart_init
+    uart_init
+        0x0000035e:    b5f0        ..      PUSH     {r4-r7,lr}
+        0x00000360:    4604        .F      MOV      r4,r0
+        0x00000362:    9d05        ..      LDR      r5,[sp,#0x14]
+        0x00000364:    2600        .&      MOVS     r6,#0
+        0x00000366:    2a00        .*      CMP      r2,#0
+        0x00000368:    d001        ..      BEQ      0x36e ; uart_init + 16
+        0x0000036a:    2001        .       MOVS     r0,#1
+        0x0000036c:    4306        .C      ORRS     r6,r6,r0
+        0x0000036e:    2b00        .+      CMP      r3,#0
+        0x00000370:    d001        ..      BEQ      0x376 ; uart_init + 24
+        0x00000372:    2002        .       MOVS     r0,#2
+        0x00000374:    4306        .C      ORRS     r6,r6,r0
+        0x00000376:    2d00        .-      CMP      r5,#0
+        0x00000378:    d001        ..      BEQ      0x37e ; uart_init + 32
+        0x0000037a:    2004        .       MOVS     r0,#4
+        0x0000037c:    4306        .C      ORRS     r6,r6,r0
+        0x0000037e:    9806        ..      LDR      r0,[sp,#0x18]
+        0x00000380:    2800        .(      CMP      r0,#0
+        0x00000382:    d001        ..      BEQ      0x388 ; uart_init + 42
+        0x00000384:    2008        .       MOVS     r0,#8
+        0x00000386:    4306        .C      ORRS     r6,r6,r0
+        0x00000388:    9807        ..      LDR      r0,[sp,#0x1c]
+        0x0000038a:    2800        .(      CMP      r0,#0
+        0x0000038c:    d001        ..      BEQ      0x392 ; uart_init + 52
+        0x0000038e:    2010        .       MOVS     r0,#0x10
+        0x00000390:    4306        .C      ORRS     r6,r6,r0
+        0x00000392:    9808        ..      LDR      r0,[sp,#0x20]
+        0x00000394:    2800        .(      CMP      r0,#0
+        0x00000396:    d001        ..      BEQ      0x39c ; uart_init + 62
+        0x00000398:    2020                MOVS     r0,#0x20
+        0x0000039a:    4306        .C      ORRS     r6,r6,r0
+        0x0000039c:    2000        .       MOVS     r0,#0
+        0x0000039e:    60a0        .`      STR      r0,[r4,#8]
+        0x000003a0:    6121        !a      STR      r1,[r4,#0x10]
+        0x000003a2:    60a6        .`      STR      r6,[r4,#8]
+        0x000003a4:    6860        `h      LDR      r0,[r4,#4]
+        0x000003a6:    270c        .'      MOVS     r7,#0xc
+        0x000003a8:    4038        8@      ANDS     r0,r0,r7
+        0x000003aa:    2800        .(      CMP      r0,#0
+        0x000003ac:    d001        ..      BEQ      0x3b2 ; uart_init + 84
+        0x000003ae:    2001        .       MOVS     r0,#1
+        0x000003b0:    bdf0        ..      POP      {r4-r7,pc}
+        0x000003b2:    2000        .       MOVS     r0,#0
+        0x000003b4:    e7fc        ..      B        0x3b0 ; uart_init + 82
+        0x000003b6:    0000        ..      MOVS     r0,r0
+    $d.realdata
+    Region$$Table$$Base
+        0x000003b8:    000003d8    ....    DCD    984
+        0x000003bc:    20000000    ...     DCD    536870912
+        0x000003c0:    00000008    ....    DCD    8
+        0x000003c4:    00000274    t...    DCD    628
+        0x000003c8:    000003e0    ....    DCD    992
+        0x000003cc:    20000008    ...     DCD    536870920
+        0x000003d0:    00000400    ....    DCD    1024
+        0x000003d4:    00000284    ....    DCD    644
+    Region$$Table$$Limit
+
+====================================
+
+** Section #2
+
+    Name        : RW_IRAM1
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : SHF_ALLOC + SHF_WRITE (0x00000003)
+    Addr        : 0x20000000
+    File Offset : 1036 (0x40c)
+    Size        : 8 bytes (0x8)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 4
+    Entry Size  : 0
+
+
+====================================
+
+** Section #3
+
+    Name        : RW_IRAM1
+    Type        : SHT_NOBITS (0x00000008)
+    Flags       : SHF_ALLOC + SHF_WRITE (0x00000003)
+    Addr        : 0x20000008
+    File Offset : 1044 (0x414)
+    Size        : 1024 bytes (0x400)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 8
+    Entry Size  : 0
+
+
+====================================
+
+** Section #4
+
+    Name        : .debug_abbrev
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 1044 (0x414)
+    Size        : 1476 bytes (0x5c4)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+
+====================================
+
+** Section #5
+
+    Name        : .debug_frame
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 2520 (0x9d8)
+    Size        : 1368 bytes (0x558)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+
+====================================
+
+** Section #6
+
+    Name        : .debug_info
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 3888 (0xf30)
+    Size        : 11652 bytes (0x2d84)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+
+====================================
+
+** Section #7
+
+    Name        : .debug_line
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 15540 (0x3cb4)
+    Size        : 3612 bytes (0xe1c)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+
+====================================
+
+** Section #8
+
+    Name        : .debug_loc
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 19152 (0x4ad0)
+    Size        : 1256 bytes (0x4e8)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+
+====================================
+
+** Section #9
+
+    Name        : .debug_macinfo
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 20408 (0x4fb8)
+    Size        : 8396 bytes (0x20cc)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+
+====================================
+
+** Section #10
+
+    Name        : .debug_pubnames
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 28804 (0x7084)
+    Size        : 1112 bytes (0x458)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+
+====================================
+
+** Section #11
+
+    Name        : .symtab
+    Type        : SHT_SYMTAB (0x00000002)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 29916 (0x74dc)
+    Size        : 3264 bytes (0xcc0)
+    Link        : Section 12 (.strtab)
+    Info        : Last local symbol no = 130
+    Alignment   : 4
+    Entry Size  : 16
+
+
+====================================
+
+** Section #12
+
+    Name        : .strtab
+    Type        : SHT_STRTAB (0x00000003)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 33180 (0x819c)
+    Size        : 2560 bytes (0xa00)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+
+====================================
+
+** Section #13
+
+    Name        : .note
+    Type        : SHT_NOTE (0x00000007)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 35740 (0x8b9c)
+    Size        : 28 bytes (0x1c)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 4
+    Entry Size  : 0
+
+        Section     Segment
+    ====================================
+
+              1           0
+              2           0
+              3           0
+
+====================================
+
+** Section #14
+
+    Name        : .comment
+    Type        : SHT_PROGBITS (0x00000001)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 35768 (0x8bb8)
+    Size        : 5880 bytes (0x16f8)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+    ArmLink --strict --library_type=microlib --callgraph --load_addr_map_info --map --symbols --xref --diag_suppress=9931 --cpu=Cortex-M0 --list=.\Listings\cm0.map --output=.\cm0.axf --scatter=.\cm0.sct --info=summarysizes,sizes,totals,unused,veneers
+
+    D:\Program Files\Keil_V5\ARM\ARMCC\Bin\..\lib\armlib\h_p.l
+    D:\Program Files\Keil_V5\ARM\ARMCC\Bin\..\lib\armlib\m_ps.l
+    D:\Program Files\Keil_V5\ARM\ARMCC\Bin\..\lib\armlib\mc_p.l
+    D:\Program Files\Keil_V5\ARM\ARMCC\Bin\..\lib\armlib\mf_p.l
+    D:\Program Files\Keil_V5\ARM\ARMCC\Bin\..\lib\armlib\vfpsupport.l
+    Input Comments:
+    
+    cortexm0_driver.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+    armlink --partial --no_add_relocs_to_undefined --no_generate_mapping_symbols --diag_suppress=9931,9931,6642 --cpu=Cortex-M0 --fpu=SoftVFP --output=.\cortexm0_driver.o --vfemode=force
+
+    Input Comments:
+    
+    p4890-3
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armasm [4d35ec]
+    armasm --debug --diag_suppress=9931,9931,1602,1073 --cpu=Cortex-M0 --fpu=SoftVFP --apcs=/interwork/interwork --no_divide 
+    cortexm0_driver.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: ArmCC [4d3637]
+    ArmCC --c99 --split_sections --debug -c --gnu -o.\cortexm0_driver.o --depend=.\cortexm0_driver.d --cpu=Cortex-M0 --apcs=interwork -O0 --diag_suppress=9931 -I..\Software -I.\RTE\_Target_1 -I"D:\Program Files\Keil_V5\Arm\Packs\Keil\V2M-MPS2_CMx_BSP\1.7.1\Device\CMSDK_CM0\Include" -I"D:\Program Files\Keil_V5\ARM\CMSIS\Include" -D__MICROLIB -D__UVISION_VERSION=528 -DCMSDK_CM0 --omf_browse=.\cortexm0_driver.crf ..\Software\CortexM0_driver.c
+    
+    
+    handler.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+    armlink --partial --no_add_relocs_to_undefined --no_generate_mapping_symbols --diag_suppress=9931,9931,6642 --cpu=Cortex-M0 --fpu=SoftVFP --output=.\handler.o --vfemode=force
+
+    Input Comments:
+    
+    p488c-3
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armasm [4d35ec]
+    armasm --debug --diag_suppress=9931,9931,1602,1073 --cpu=Cortex-M0 --fpu=SoftVFP --apcs=/interwork/interwork --no_divide 
+    handler.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: ArmCC [4d3637]
+    ArmCC --c99 --split_sections --debug -c --gnu -o.\handler.o --depend=.\handler.d --cpu=Cortex-M0 --apcs=interwork -O0 --diag_suppress=9931 -I..\Software -I.\RTE\_Target_1 -I"D:\Program Files\Keil_V5\Arm\Packs\Keil\V2M-MPS2_CMx_BSP\1.7.1\Device\CMSDK_CM0\Include" -I"D:\Program Files\Keil_V5\ARM\CMSIS\Include" -D__MICROLIB -D__UVISION_VERSION=528 -DCMSDK_CM0 --omf_browse=.\handler.crf ..\Software\handler.c
+    
+    
+    main.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+    armlink --partial --no_add_relocs_to_undefined --no_generate_mapping_symbols --diag_suppress=9931,9931,6642 --cpu=Cortex-M0 --fpu=SoftVFP --output=.\main.o --vfemode=force
+
+    Input Comments:
+    
+    p4898-3
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armasm [4d35ec]
+    armasm --debug --diag_suppress=9931,9931,1602,1073 --cpu=Cortex-M0 --fpu=SoftVFP --apcs=/interwork/interwork --no_divide 
+    main.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: ArmCC [4d3637]
+    ArmCC --c99 --split_sections --debug -c --gnu -o.\main.o --depend=.\main.d --cpu=Cortex-M0 --apcs=interwork -O0 --diag_suppress=9931 -I..\Software -I.\RTE\_Target_1 -I"D:\Program Files\Keil_V5\Arm\Packs\Keil\V2M-MPS2_CMx_BSP\1.7.1\Device\CMSDK_CM0\Include" -I"D:\Program Files\Keil_V5\ARM\CMSIS\Include" -D__MICROLIB -D__UVISION_VERSION=528 -DCMSDK_CM0 --omf_browse=.\main.crf ..\Software\main.c
+    
+    
+    
+    
+    retarget.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+    armlink --partial --no_add_relocs_to_undefined --no_generate_mapping_symbols --diag_suppress=9931,9931,6642 --cpu=Cortex-M0 --fpu=SoftVFP --output=.\retarget.o --vfemode=force
+
+    Input Comments:
+    
+    p4868-3
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armasm [4d35ec]
+    armasm --debug --diag_suppress=9931,9931,1602,1073 --cpu=Cortex-M0 --fpu=SoftVFP --apcs=/interwork/interwork --no_divide 
+    retarget.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: ArmCC [4d3637]
+    ArmCC --c99 --split_sections --debug -c --gnu -o.\retarget.o --depend=.\retarget.d --cpu=Cortex-M0 --apcs=interwork -O0 --diag_suppress=9931 -I..\Software -I.\RTE\_Target_1 -I"D:\Program Files\Keil_V5\Arm\Packs\Keil\V2M-MPS2_CMx_BSP\1.7.1\Device\CMSDK_CM0\Include" -I"D:\Program Files\Keil_V5\ARM\CMSIS\Include" -D__MICROLIB -D__UVISION_VERSION=528 -DCMSDK_CM0 --omf_browse=.\retarget.crf ..\Software\Retarget.c
+    
+    
+    
+    
+    startup_cm0ds.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armasm [4d35ec]
+    ArmAsm --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interwork --depend=.\startup_cm0ds.d  -I..\Software -I..\Keil -I.\RTE\_Target_1 -I"D:\Program Files\Keil_V5\Arm\Packs\Keil\V2M-MPS2_CMx_BSP\1.7.1\Device\CMSDK_CM0\Include" -I"D:
+    
+    
+    system.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+    armlink --partial --no_add_relocs_to_undefined --no_generate_mapping_symbols --diag_suppress=9931,9931,6642 --cpu=Cortex-M0 --fpu=SoftVFP --output=.\system.o --vfemode=force
+
+    Input Comments:
+    
+    p4870-3
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: armasm [4d35ec]
+    armasm --debug --diag_suppress=9931,9931,1602,1073 --cpu=Cortex-M0 --fpu=SoftVFP --apcs=/interwork/interwork --no_divide 
+    system.o
+    
+    Component: ARM Compiler 5.06 update 6 (build 750) Tool: ArmCC [4d3637]
+    ArmCC --c99 --split_sections --debug -c --gnu -o.\system.o --depend=.\system.d --cpu=Cortex-M0 --apcs=interwork -O0 --diag_suppress=9931 -I..\Software -I.\RTE\_Target_1 -I"D:\Program Files\Keil_V5\Arm\Packs\Keil\V2M-MPS2_CMx_BSP\1.7.1\Device\CMSDK_CM0\Include" -I"D:\Program Files\Keil_V5\ARM\CMSIS\Include" -D__MICROLIB -D__UVISION_VERSION=528 -DCMSDK_CM0 --omf_browse=.\system.crf ..\Software\system.c
+    
+    
+    
+    
+    
+
+====================================
+
+** Section #15
+
+    Name        : .shstrtab
+    Type        : SHT_STRTAB (0x00000003)
+    Flags       : None (0x00000000)
+    Addr        : 0x00000000
+    File Offset : 41648 (0xa2b0)
+    Size        : 156 bytes (0x9c)
+    Link        : SHN_UNDEF
+    Info        : 0
+    Alignment   : 1
+    Entry Size  : 0
+
+
+====================================
+

@@ -1,0 +1,569 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    cortexm0_driver.o(i.FM_search) refers to fdiv.o(.text) for __aeabi_fdiv
+    cortexm0_driver.o(i.FM_search) refers to ffixui.o(.text) for __aeabi_f2uiz
+    cortexm0_driver.o(i.FM_search) refers to ffltui.o(.text) for __aeabi_ui2f
+    cortexm0_driver.o(i.FM_search) refers to fadd.o(.text) for __aeabi_frsub
+    cortexm0_driver.o(i.FM_search) refers to fmul.o(.text) for __aeabi_fmul
+    cortexm0_driver.o(i.FM_search) refers to cortexm0_driver.o(i.SPI_WR_word) for SPI_WR_word
+    cortexm0_driver.o(i.FM_search) refers to cortexm0_driver.o(i.delay) for delay
+    cortexm0_driver.o(i.MSI_Init) refers to cortexm0_driver.o(i.SPI_WR_word) for SPI_WR_word
+    cortexm0_driver.o(i.MSI_Init) refers to cortexm0_driver.o(i.delay) for delay
+    cortexm0_driver.o(i.SEG_show_FM) refers to fdiv.o(.text) for __aeabi_fdiv
+    cortexm0_driver.o(i.SEG_show_FM) refers to ffixui.o(.text) for __aeabi_f2uiz
+    cortexm0_driver.o(i.SEG_show_FM) refers to ffltui.o(.text) for __aeabi_ui2f
+    cortexm0_driver.o(i.SEG_show_FM) refers to fadd.o(.text) for __aeabi_fsub
+    cortexm0_driver.o(i.SEG_show_FM) refers to fmul.o(.text) for __aeabi_fmul
+    cortexm0_driver.o(i.SEG_show_FM) refers to cortexm0_driver.o(i.SEG_show_num) for SEG_show_num
+    cortexm0_driver.o(i.delay) refers to cortexm0_driver.o(i.Set_SysTick_CTRL) for Set_SysTick_CTRL
+    cortexm0_driver.o(i.delay) refers to cortexm0_driver.o(i.Set_SysTick_LOAD) for Set_SysTick_LOAD
+    cortexm0_driver.o(i.delay) refers to cortexm0_driver.o(i.Set_SysTick_VALUE) for Set_SysTick_VALUE
+    cortexm0_driver.o(i.uart_SendString) refers to strlen.o(.text) for strlen
+    cortexm0_driver.o(i.uart_SendString) refers to cortexm0_driver.o(i.uart_SendChar) for uart_SendChar
+    handler.o(i.KEY0) refers to f2d.o(.text) for __aeabi_f2d
+    handler.o(i.KEY0) refers to dadd.o(.text) for __aeabi_dadd
+    handler.o(i.KEY0) refers to d2f.o(.text) for __aeabi_d2f
+    handler.o(i.KEY0) refers to handler.o(.data) for FM
+    handler.o(i.KEY1) refers to f2d.o(.text) for __aeabi_f2d
+    handler.o(i.KEY1) refers to dadd.o(.text) for __aeabi_dsub
+    handler.o(i.KEY1) refers to d2f.o(.text) for __aeabi_d2f
+    handler.o(i.KEY1) refers to handler.o(.data) for FM
+    handler.o(i.KEY2) refers to ffltui.o(.text) for __aeabi_ui2f
+    handler.o(i.KEY2) refers to ffixui.o(.text) for __aeabi_f2uiz
+    handler.o(i.KEY2) refers to handler.o(.data) for voice
+    handler.o(i.KEY3) refers to ffltui.o(.text) for __aeabi_ui2f
+    handler.o(i.KEY3) refers to ffixui.o(.text) for __aeabi_f2uiz
+    handler.o(i.KEY3) refers to handler.o(.data) for voice
+    handler.o(i.SysTickHandler) refers to cortexm0_driver.o(i.Set_SysTick_CTRL) for Set_SysTick_CTRL
+    handler.o(i.Timer_Handler) refers to cortexm0_driver.o(i.LED_toggle) for LED_toggle
+    handler.o(i.UARTRXHandler) refers to cortexm0_driver.o(i.uart_ClearRxIRQ) for uart_ClearRxIRQ
+    handler.o(i.UARTRXHandler) refers to cortexm0_driver.o(i.LED_toggle) for LED_toggle
+    handler.o(i.UARTTXHandler) refers to cortexm0_driver.o(i.uart_ClearTxIRQ) for uart_ClearTxIRQ
+    handler.o(i.UARTTXHandler) refers to cortexm0_driver.o(i.LED_toggle) for LED_toggle
+    main.o(i.main) refers to main.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    main.o(i.main) refers to cortexm0_driver.o(i.DAC_enable) for DAC_enable
+    main.o(i.main) refers to cortexm0_driver.o(i.DAC_voice_gain) for DAC_voice_gain
+    main.o(i.main) refers to cortexm0_driver.o(i.FM_search) for FM_search
+    main.o(i.main) refers to cortexm0_driver.o(i.SEG_show_FM) for SEG_show_FM
+    main.o(i.main) refers to main.o(i.my_delay) for my_delay
+    main.o(i.main) refers to handler.o(.data) for voice
+    retarget.o(i._ttywrch) refers to cortexm0_driver.o(i.uart_SendChar) for uart_SendChar
+    retarget.o(i.fgetc) refers to cortexm0_driver.o(i.uart_ReceiveChar) for uart_ReceiveChar
+    retarget.o(i.fgetc) refers to cortexm0_driver.o(i.uart_SendChar) for uart_SendChar
+    retarget.o(i.fputc) refers to cortexm0_driver.o(i.uart_SendChar) for uart_SendChar
+    startup_cm0ds.o(RESET) refers to startup_cm0ds.o(STACK) for __initial_sp
+    startup_cm0ds.o(RESET) refers to startup_cm0ds.o(.text) for Reset_Handler
+    startup_cm0ds.o(.text) refers to handler.o(i.NMIHandler) for NMIHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.HardFaultHandler) for HardFaultHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.MemManageHandler) for MemManageHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.BusFaultHandler) for BusFaultHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.UsageFaultHandler) for UsageFaultHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.SVCHandler) for SVCHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.DebugMonHandler) for DebugMonHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.PendSVHandler) for PendSVHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.SysTickHandler) for SysTickHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.UARTRXHandler) for UARTRXHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.UARTTXHandler) for UARTTXHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.UARTOVRHandler) for UARTOVRHandler
+    startup_cm0ds.o(.text) refers to handler.o(i.KEY0) for KEY0
+    startup_cm0ds.o(.text) refers to handler.o(i.KEY1) for KEY1
+    startup_cm0ds.o(.text) refers to handler.o(i.KEY2) for KEY2
+    startup_cm0ds.o(.text) refers to handler.o(i.KEY3) for KEY3
+    startup_cm0ds.o(.text) refers to handler.o(i.Timer_Handler) for Timer_Handler
+    startup_cm0ds.o(.text) refers to system.o(i.SystemInit) for SystemInit
+    startup_cm0ds.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system.o(i.SystemCoreClockUpdate) refers to system.o(.data) for SystemCoreClock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    fmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_cm0ds.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_cm0ds.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    depilogue.o(.text) refers to depilogue.o(i.__ARM_clz) for __ARM_clz
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing cortexm0_driver.o(.rev16_text), (4 bytes).
+    Removing cortexm0_driver.o(.revsh_text), (4 bytes).
+    Removing cortexm0_driver.o(i.DAC_disable), (12 bytes).
+    Removing cortexm0_driver.o(i.LED_down), (24 bytes).
+    Removing cortexm0_driver.o(i.LED_on), (24 bytes).
+    Removing cortexm0_driver.o(i.MSI_Init), (112 bytes).
+    Removing cortexm0_driver.o(i.READ_KEY), (12 bytes).
+    Removing cortexm0_driver.o(i.Read_SysTick_VALUE), (12 bytes).
+    Removing cortexm0_driver.o(i.Read_voice_gain), (12 bytes).
+    Removing cortexm0_driver.o(i.SEG_disable), (12 bytes).
+    Removing cortexm0_driver.o(i.SEG_enable), (12 bytes).
+    Removing cortexm0_driver.o(i.TIMER_Init), (24 bytes).
+    Removing cortexm0_driver.o(i.Timer_Ini), (44 bytes).
+    Removing cortexm0_driver.o(i.Timer_Stop), (36 bytes).
+    Removing cortexm0_driver.o(i.led_ctrl), (56 bytes).
+    Removing cortexm0_driver.o(i.uart_ClearOverrunStatus), (16 bytes).
+    Removing cortexm0_driver.o(i.uart_GetBaudDivider), (6 bytes).
+    Removing cortexm0_driver.o(i.uart_GetOverrunStatus), (12 bytes).
+    Removing cortexm0_driver.o(i.uart_GetRxBufferFull), (12 bytes).
+    Removing cortexm0_driver.o(i.uart_GetRxIRQStatus), (12 bytes).
+    Removing cortexm0_driver.o(i.uart_GetTxBufferFull), (10 bytes).
+    Removing cortexm0_driver.o(i.uart_GetTxIRQStatus), (10 bytes).
+    Removing cortexm0_driver.o(i.uart_ReceiveChar), (20 bytes).
+    Removing cortexm0_driver.o(i.uart_SendChar), (22 bytes).
+    Removing cortexm0_driver.o(i.uart_SendString), (34 bytes).
+    Removing cortexm0_driver.o(i.uart_init), (88 bytes).
+    Removing handler.o(.rev16_text), (4 bytes).
+    Removing handler.o(.revsh_text), (4 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.data), (4 bytes).
+    Removing retarget.o(.rev16_text), (4 bytes).
+    Removing retarget.o(.revsh_text), (4 bytes).
+    Removing retarget.o(i._sys_exit), (4 bytes).
+    Removing retarget.o(i._ttywrch), (16 bytes).
+    Removing retarget.o(i.ferror), (8 bytes).
+    Removing retarget.o(i.fgetc), (34 bytes).
+    Removing retarget.o(i.fputc), (32 bytes).
+    Removing retarget.o(.data), (8 bytes).
+    Removing startup_cm0ds.o(HEAP), (1024 bytes).
+    Removing system.o(.rev16_text), (4 bytes).
+    Removing system.o(.revsh_text), (4 bytes).
+    Removing system.o(i.SystemCoreClockUpdate), (16 bytes).
+    Removing system.o(.data), (4 bytes).
+
+44 unused section(s) (total 1824 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section       96  startup_cm0ds.o(RESET)
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
+    ..\Software\CortexM0_driver.c            0x00000000   Number         0  cortexm0_driver.o ABSOLUTE
+    ..\Software\Retarget.c                   0x00000000   Number         0  retarget.o ABSOLUTE
+    ..\Software\handler.c                    0x00000000   Number         0  handler.o ABSOLUTE
+    ..\Software\main.c                       0x00000000   Number         0  main.o ABSOLUTE
+    ..\Software\startup_CM0DS.s              0x00000000   Number         0  startup_cm0ds.o ABSOLUTE
+    ..\Software\system.c                     0x00000000   Number         0  system.o ABSOLUTE
+    ..\\Software\\CortexM0_driver.c          0x00000000   Number         0  cortexm0_driver.o ABSOLUTE
+    ..\\Software\\Retarget.c                 0x00000000   Number         0  retarget.o ABSOLUTE
+    ..\\Software\\handler.c                  0x00000000   Number         0  handler.o ABSOLUTE
+    ..\\Software\\main.c                     0x00000000   Number         0  main.o ABSOLUTE
+    ..\\Software\\system.c                   0x00000000   Number         0  system.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x00000060   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x00000060   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x00000064   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x00000068   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x00000068   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x00000068   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x00000070   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x00000070   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x00000070   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x00000070   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x00000074   Section      156  startup_cm0ds.o(.text)
+    .text                                    0x00000110   Section        0  fadd.o(.text)
+    .text                                    0x000001c2   Section        0  fmul.o(.text)
+    .text                                    0x0000023c   Section        0  fdiv.o(.text)
+    .text                                    0x000002b8   Section        0  dadd.o(.text)
+    .text                                    0x0000041c   Section        0  ffltui.o(.text)
+    .text                                    0x0000042a   Section        0  ffixui.o(.text)
+    .text                                    0x00000452   Section        0  f2d.o(.text)
+    .text                                    0x0000047a   Section        0  d2f.o(.text)
+    .text                                    0x000004b2   Section        0  llshl.o(.text)
+    .text                                    0x000004d2   Section        0  llsshr.o(.text)
+    .text                                    0x000004f8   Section        0  iusefp.o(.text)
+    .text                                    0x000004f8   Section        0  fepilogue.o(.text)
+    .text                                    0x0000057a   Section        0  depilogue.o(.text)
+    .text                                    0x00000638   Section       36  init.o(.text)
+    .text                                    0x0000065c   Section        0  llushr.o(.text)
+    i.BusFaultHandler                        0x0000067e   Section        0  handler.o(i.BusFaultHandler)
+    i.DAC_enable                             0x00000680   Section        0  cortexm0_driver.o(i.DAC_enable)
+    i.DAC_voice_gain                         0x0000068c   Section        0  cortexm0_driver.o(i.DAC_voice_gain)
+    i.DebugMonHandler                        0x00000698   Section        0  handler.o(i.DebugMonHandler)
+    i.FM_search                              0x0000069c   Section        0  cortexm0_driver.o(i.FM_search)
+    i.HardFaultHandler                       0x0000075c   Section        0  handler.o(i.HardFaultHandler)
+    i.KEY0                                   0x00000760   Section        0  handler.o(i.KEY0)
+    i.KEY1                                   0x000007a0   Section        0  handler.o(i.KEY1)
+    i.KEY2                                   0x000007e0   Section        0  handler.o(i.KEY2)
+    i.KEY3                                   0x0000080c   Section        0  handler.o(i.KEY3)
+    i.LED_toggle                             0x00000838   Section        0  cortexm0_driver.o(i.LED_toggle)
+    i.MemManageHandler                       0x00000870   Section        0  handler.o(i.MemManageHandler)
+    i.NMIHandler                             0x00000872   Section        0  handler.o(i.NMIHandler)
+    i.NVIC_EnableIRQ                         0x00000874   Section        0  main.o(i.NVIC_EnableIRQ)
+    NVIC_EnableIRQ                           0x00000875   Thumb Code    14  main.o(i.NVIC_EnableIRQ)
+    i.PendSVHandler                          0x00000888   Section        0  handler.o(i.PendSVHandler)
+    i.SEG_show_FM                            0x0000088c   Section        0  cortexm0_driver.o(i.SEG_show_FM)
+    i.SEG_show_num                           0x00000970   Section        0  cortexm0_driver.o(i.SEG_show_num)
+    i.SPI_WR_word                            0x0000097c   Section        0  cortexm0_driver.o(i.SPI_WR_word)
+    i.SVCHandler                             0x000009bc   Section        0  handler.o(i.SVCHandler)
+    i.Set_SysTick_CTRL                       0x000009c0   Section        0  cortexm0_driver.o(i.Set_SysTick_CTRL)
+    i.Set_SysTick_LOAD                       0x000009cc   Section        0  cortexm0_driver.o(i.Set_SysTick_LOAD)
+    i.Set_SysTick_VALUE                      0x000009d8   Section        0  cortexm0_driver.o(i.Set_SysTick_VALUE)
+    i.SysTickHandler                         0x000009e4   Section        0  handler.o(i.SysTickHandler)
+    i.SystemInit                             0x00000a00   Section        0  system.o(i.SystemInit)
+    i.Timer_Handler                          0x00000a02   Section        0  handler.o(i.Timer_Handler)
+    i.UARTOVRHandler                         0x00000a0c   Section        0  handler.o(i.UARTOVRHandler)
+    i.UARTRXHandler                          0x00000a0e   Section        0  handler.o(i.UARTRXHandler)
+    i.UARTTXHandler                          0x00000a20   Section        0  handler.o(i.UARTTXHandler)
+    i.UsageFaultHandler                      0x00000a32   Section        0  handler.o(i.UsageFaultHandler)
+    i.__ARM_clz                              0x00000a34   Section        0  depilogue.o(i.__ARM_clz)
+    i.__scatterload_copy                     0x00000a62   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000a70   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000a72   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.delay                                  0x00000a80   Section        0  cortexm0_driver.o(i.delay)
+    i.main                                   0x00000aa0   Section        0  main.o(i.main)
+    i.my_delay                               0x00000b34   Section        0  main.o(i.my_delay)
+    i.uart_ClearRxIRQ                        0x00000b4e   Section        0  cortexm0_driver.o(i.uart_ClearRxIRQ)
+    i.uart_ClearTxIRQ                        0x00000b54   Section        0  cortexm0_driver.o(i.uart_ClearTxIRQ)
+    .data                                    0x20000000   Section       12  handler.o(.data)
+    STACK                                    0x20000010   Section     1024  startup_cm0ds.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_cm0ds.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_End                            0x00000060   Data           0  startup_cm0ds.o(RESET)
+    __Vectors_Size                           0x00000060   Number         0  startup_cm0ds.o ABSOLUTE
+    __main                                   0x00000061   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x00000061   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x00000065   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x00000069   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x00000069   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x00000069   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x00000069   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x00000071   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x00000071   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x00000075   Thumb Code    12  startup_cm0ds.o(.text)
+    NMI_Handler                              0x00000081   Thumb Code     8  startup_cm0ds.o(.text)
+    HardFault_Handler                        0x00000089   Thumb Code     8  startup_cm0ds.o(.text)
+    MemManage_Handler                        0x00000091   Thumb Code     8  startup_cm0ds.o(.text)
+    BusFault_Handler                         0x00000099   Thumb Code     8  startup_cm0ds.o(.text)
+    UsageFault_Handler                       0x000000a1   Thumb Code     8  startup_cm0ds.o(.text)
+    SVC_Handler                              0x000000a9   Thumb Code     8  startup_cm0ds.o(.text)
+    DebugMon_Handler                         0x000000b1   Thumb Code     8  startup_cm0ds.o(.text)
+    PendSV_Handler                           0x000000b9   Thumb Code     8  startup_cm0ds.o(.text)
+    SysTick_Handler                          0x000000c1   Thumb Code     8  startup_cm0ds.o(.text)
+    UARTRX_Handler                           0x000000c9   Thumb Code     8  startup_cm0ds.o(.text)
+    UARTTX_Handler                           0x000000d1   Thumb Code     8  startup_cm0ds.o(.text)
+    UARTOVR_Handler                          0x000000d9   Thumb Code     8  startup_cm0ds.o(.text)
+    KEY0_Handler                             0x000000e1   Thumb Code     8  startup_cm0ds.o(.text)
+    KEY1_Handler                             0x000000e9   Thumb Code     8  startup_cm0ds.o(.text)
+    KEY2_Handler                             0x000000f1   Thumb Code     8  startup_cm0ds.o(.text)
+    KEY3_Handler                             0x000000f9   Thumb Code     8  startup_cm0ds.o(.text)
+    TIMER_Handler                            0x00000101   Thumb Code     8  startup_cm0ds.o(.text)
+    __aeabi_fadd                             0x00000111   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x000001b3   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x000001bb   Thumb Code     8  fadd.o(.text)
+    __aeabi_fmul                             0x000001c3   Thumb Code   122  fmul.o(.text)
+    __aeabi_fdiv                             0x0000023d   Thumb Code   124  fdiv.o(.text)
+    __aeabi_dadd                             0x000002b9   Thumb Code   328  dadd.o(.text)
+    __aeabi_dsub                             0x00000401   Thumb Code    12  dadd.o(.text)
+    __aeabi_drsub                            0x0000040d   Thumb Code    12  dadd.o(.text)
+    __aeabi_ui2f                             0x0000041d   Thumb Code    14  ffltui.o(.text)
+    __aeabi_f2uiz                            0x0000042b   Thumb Code    40  ffixui.o(.text)
+    __aeabi_f2d                              0x00000453   Thumb Code    40  f2d.o(.text)
+    __aeabi_d2f                              0x0000047b   Thumb Code    56  d2f.o(.text)
+    __aeabi_llsl                             0x000004b3   Thumb Code    32  llshl.o(.text)
+    _ll_shift_l                              0x000004b3   Thumb Code     0  llshl.o(.text)
+    __aeabi_lasr                             0x000004d3   Thumb Code    38  llsshr.o(.text)
+    _ll_sshift_r                             0x000004d3   Thumb Code     0  llsshr.o(.text)
+    __I$use$fp                               0x000004f9   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x000004f9   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x00000509   Thumb Code   114  fepilogue.o(.text)
+    _double_round                            0x0000057b   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x00000595   Thumb Code   164  depilogue.o(.text)
+    __scatterload                            0x00000639   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000639   Thumb Code     0  init.o(.text)
+    __aeabi_llsr                             0x0000065d   Thumb Code    34  llushr.o(.text)
+    _ll_ushift_r                             0x0000065d   Thumb Code     0  llushr.o(.text)
+    BusFaultHandler                          0x0000067f   Thumb Code     2  handler.o(i.BusFaultHandler)
+    DAC_enable                               0x00000681   Thumb Code     8  cortexm0_driver.o(i.DAC_enable)
+    DAC_voice_gain                           0x0000068d   Thumb Code     6  cortexm0_driver.o(i.DAC_voice_gain)
+    DebugMonHandler                          0x00000699   Thumb Code     2  handler.o(i.DebugMonHandler)
+    FM_search                                0x0000069d   Thumb Code   162  cortexm0_driver.o(i.FM_search)
+    HardFaultHandler                         0x0000075d   Thumb Code     2  handler.o(i.HardFaultHandler)
+    KEY0                                     0x00000761   Thumb Code    46  handler.o(i.KEY0)
+    KEY1                                     0x000007a1   Thumb Code    46  handler.o(i.KEY1)
+    KEY2                                     0x000007e1   Thumb Code    34  handler.o(i.KEY2)
+    KEY3                                     0x0000080d   Thumb Code    34  handler.o(i.KEY3)
+    LED_toggle                               0x00000839   Thumb Code    50  cortexm0_driver.o(i.LED_toggle)
+    MemManageHandler                         0x00000871   Thumb Code     2  handler.o(i.MemManageHandler)
+    NMIHandler                               0x00000873   Thumb Code     2  handler.o(i.NMIHandler)
+    PendSVHandler                            0x00000889   Thumb Code     2  handler.o(i.PendSVHandler)
+    SEG_show_FM                              0x0000088d   Thumb Code   218  cortexm0_driver.o(i.SEG_show_FM)
+    SEG_show_num                             0x00000971   Thumb Code     6  cortexm0_driver.o(i.SEG_show_num)
+    SPI_WR_word                              0x0000097d   Thumb Code    60  cortexm0_driver.o(i.SPI_WR_word)
+    SVCHandler                               0x000009bd   Thumb Code     2  handler.o(i.SVCHandler)
+    Set_SysTick_CTRL                         0x000009c1   Thumb Code     6  cortexm0_driver.o(i.Set_SysTick_CTRL)
+    Set_SysTick_LOAD                         0x000009cd   Thumb Code     6  cortexm0_driver.o(i.Set_SysTick_LOAD)
+    Set_SysTick_VALUE                        0x000009d9   Thumb Code     6  cortexm0_driver.o(i.Set_SysTick_VALUE)
+    SysTickHandler                           0x000009e5   Thumb Code    24  handler.o(i.SysTickHandler)
+    SystemInit                               0x00000a01   Thumb Code     2  system.o(i.SystemInit)
+    Timer_Handler                            0x00000a03   Thumb Code    10  handler.o(i.Timer_Handler)
+    UARTOVRHandler                           0x00000a0d   Thumb Code     2  handler.o(i.UARTOVRHandler)
+    UARTRXHandler                            0x00000a0f   Thumb Code    18  handler.o(i.UARTRXHandler)
+    UARTTXHandler                            0x00000a21   Thumb Code    18  handler.o(i.UARTTXHandler)
+    UsageFaultHandler                        0x00000a33   Thumb Code     2  handler.o(i.UsageFaultHandler)
+    __ARM_clz                                0x00000a35   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __scatterload_copy                       0x00000a63   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000a71   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000a73   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    delay                                    0x00000a81   Thumb Code    32  cortexm0_driver.o(i.delay)
+    main                                     0x00000aa1   Thumb Code   122  main.o(i.main)
+    my_delay                                 0x00000b35   Thumb Code    26  main.o(i.my_delay)
+    uart_ClearRxIRQ                          0x00000b4f   Thumb Code     6  cortexm0_driver.o(i.uart_ClearRxIRQ)
+    uart_ClearTxIRQ                          0x00000b55   Thumb Code     6  cortexm0_driver.o(i.uart_ClearTxIRQ)
+    Region$$Table$$Base                      0x00000b5c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000b7c   Number         0  anon$$obj.o(Region$$Table)
+    FM                                       0x20000000   Data           4  handler.o(.data)
+    flag                                     0x20000004   Data           1  handler.o(.data)
+    voice                                    0x20000008   Data           4  handler.o(.data)
+    __initial_sp                             0x20000410   Data           0  startup_cm0ds.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000061
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000b88, Max: 0x00004000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000b7c, Max: 0x00004000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x00000060   Data   RO          472    RESET               startup_cm0ds.o
+    0x00000060   0x00000060   0x00000000   Code   RO          506  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x00000060   0x00000060   0x00000004   Code   RO          527    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x00000064   0x00000064   0x00000004   Code   RO          530    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x00000068   0x00000068   0x00000000   Code   RO          532    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x00000068   0x00000068   0x00000000   Code   RO          534    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x00000068   0x00000068   0x00000008   Code   RO          535    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x00000070   0x00000070   0x00000000   Code   RO          537    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x00000070   0x00000070   0x00000000   Code   RO          539    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x00000070   0x00000070   0x00000004   Code   RO          528    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x00000074   0x00000074   0x0000009c   Code   RO          473    .text               startup_cm0ds.o
+    0x00000110   0x00000110   0x000000b2   Code   RO          511    .text               mf_p.l(fadd.o)
+    0x000001c2   0x000001c2   0x0000007a   Code   RO          513    .text               mf_p.l(fmul.o)
+    0x0000023c   0x0000023c   0x0000007c   Code   RO          515    .text               mf_p.l(fdiv.o)
+    0x000002b8   0x000002b8   0x00000164   Code   RO          517    .text               mf_p.l(dadd.o)
+    0x0000041c   0x0000041c   0x0000000e   Code   RO          519    .text               mf_p.l(ffltui.o)
+    0x0000042a   0x0000042a   0x00000028   Code   RO          521    .text               mf_p.l(ffixui.o)
+    0x00000452   0x00000452   0x00000028   Code   RO          523    .text               mf_p.l(f2d.o)
+    0x0000047a   0x0000047a   0x00000038   Code   RO          525    .text               mf_p.l(d2f.o)
+    0x000004b2   0x000004b2   0x00000020   Code   RO          541    .text               mc_p.l(llshl.o)
+    0x000004d2   0x000004d2   0x00000026   Code   RO          543    .text               mc_p.l(llsshr.o)
+    0x000004f8   0x000004f8   0x00000000   Code   RO          545    .text               mc_p.l(iusefp.o)
+    0x000004f8   0x000004f8   0x00000082   Code   RO          546    .text               mf_p.l(fepilogue.o)
+    0x0000057a   0x0000057a   0x000000be   Code   RO          548    .text               mf_p.l(depilogue.o)
+    0x00000638   0x00000638   0x00000024   Code   RO          552    .text               mc_p.l(init.o)
+    0x0000065c   0x0000065c   0x00000022   Code   RO          554    .text               mc_p.l(llushr.o)
+    0x0000067e   0x0000067e   0x00000002   Code   RO          263    i.BusFaultHandler   handler.o
+    0x00000680   0x00000680   0x0000000c   Code   RO            4    i.DAC_enable        cortexm0_driver.o
+    0x0000068c   0x0000068c   0x0000000c   Code   RO            5    i.DAC_voice_gain    cortexm0_driver.o
+    0x00000698   0x00000698   0x00000002   Code   RO          264    i.DebugMonHandler   handler.o
+    0x0000069a   0x0000069a   0x00000002   PAD
+    0x0000069c   0x0000069c   0x000000c0   Code   RO            6    i.FM_search         cortexm0_driver.o
+    0x0000075c   0x0000075c   0x00000002   Code   RO          265    i.HardFaultHandler  handler.o
+    0x0000075e   0x0000075e   0x00000002   PAD
+    0x00000760   0x00000760   0x00000040   Code   RO          266    i.KEY0              handler.o
+    0x000007a0   0x000007a0   0x00000040   Code   RO          267    i.KEY1              handler.o
+    0x000007e0   0x000007e0   0x0000002c   Code   RO          268    i.KEY2              handler.o
+    0x0000080c   0x0000080c   0x0000002c   Code   RO          269    i.KEY3              handler.o
+    0x00000838   0x00000838   0x00000038   Code   RO            9    i.LED_toggle        cortexm0_driver.o
+    0x00000870   0x00000870   0x00000002   Code   RO          270    i.MemManageHandler  handler.o
+    0x00000872   0x00000872   0x00000002   Code   RO          271    i.NMIHandler        handler.o
+    0x00000874   0x00000874   0x00000014   Code   RO          382    i.NVIC_EnableIRQ    main.o
+    0x00000888   0x00000888   0x00000002   Code   RO          272    i.PendSVHandler     handler.o
+    0x0000088a   0x0000088a   0x00000002   PAD
+    0x0000088c   0x0000088c   0x000000e4   Code   RO           16    i.SEG_show_FM       cortexm0_driver.o
+    0x00000970   0x00000970   0x0000000c   Code   RO           17    i.SEG_show_num      cortexm0_driver.o
+    0x0000097c   0x0000097c   0x00000040   Code   RO           18    i.SPI_WR_word       cortexm0_driver.o
+    0x000009bc   0x000009bc   0x00000002   Code   RO          273    i.SVCHandler        handler.o
+    0x000009be   0x000009be   0x00000002   PAD
+    0x000009c0   0x000009c0   0x0000000c   Code   RO           19    i.Set_SysTick_CTRL  cortexm0_driver.o
+    0x000009cc   0x000009cc   0x0000000c   Code   RO           20    i.Set_SysTick_LOAD  cortexm0_driver.o
+    0x000009d8   0x000009d8   0x0000000c   Code   RO           21    i.Set_SysTick_VALUE  cortexm0_driver.o
+    0x000009e4   0x000009e4   0x0000001c   Code   RO          274    i.SysTickHandler    handler.o
+    0x00000a00   0x00000a00   0x00000002   Code   RO          480    i.SystemInit        system.o
+    0x00000a02   0x00000a02   0x0000000a   Code   RO          275    i.Timer_Handler     handler.o
+    0x00000a0c   0x00000a0c   0x00000002   Code   RO          276    i.UARTOVRHandler    handler.o
+    0x00000a0e   0x00000a0e   0x00000012   Code   RO          277    i.UARTRXHandler     handler.o
+    0x00000a20   0x00000a20   0x00000012   Code   RO          278    i.UARTTXHandler     handler.o
+    0x00000a32   0x00000a32   0x00000002   Code   RO          279    i.UsageFaultHandler  handler.o
+    0x00000a34   0x00000a34   0x0000002e   Code   RO          550    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x00000a62   0x00000a62   0x0000000e   Code   RO          558    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x00000a70   0x00000a70   0x00000002   Code   RO          559    i.__scatterload_null  mc_p.l(handlers.o)
+    0x00000a72   0x00000a72   0x0000000e   Code   RO          560    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x00000a80   0x00000a80   0x00000020   Code   RO           25    i.delay             cortexm0_driver.o
+    0x00000aa0   0x00000aa0   0x00000094   Code   RO          383    i.main              main.o
+    0x00000b34   0x00000b34   0x0000001a   Code   RO          384    i.my_delay          main.o
+    0x00000b4e   0x00000b4e   0x00000006   Code   RO           28    i.uart_ClearRxIRQ   cortexm0_driver.o
+    0x00000b54   0x00000b54   0x00000006   Code   RO           29    i.uart_ClearTxIRQ   cortexm0_driver.o
+    0x00000b5a   0x00000b5a   0x00000002   PAD
+    0x00000b5c   0x00000b5c   0x00000020   Data   RO          556    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000b7c, Size: 0x00000410, Max: 0x00004000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00000b7c   0x0000000c   Data   RW          280    .data               handler.o
+    0x2000000c   0x00000b88   0x00000004   PAD
+    0x20000010        -       0x00000400   Zero   RW          470    STACK               startup_cm0ds.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       656         84          0          0          0      14872   cortexm0_driver.o
+       308         60          0         12          0       7402   handler.o
+       194         32          0          0          0       7086   main.o
+       156          8         96          0       1024       1120   startup_cm0ds.o
+         2          0          0          0          0        389   system.o
+
+    ----------------------------------------------------------------------
+      1326        184        128         12       1028      30869   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        10          0          0          0          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        32          0          0          0          0         68   llshl.o
+        38          0          0          0          0         68   llsshr.o
+        34          0          0          0          0         68   llushr.o
+        56          0          0          0          0         68   d2f.o
+       356          4          0          0          0        140   dadd.o
+       236          0          0          0          0        216   depilogue.o
+        40          0          0          0          0         60   f2d.o
+       178          0          0          0          0        108   fadd.o
+       124          0          0          0          0         72   fdiv.o
+       130          0          0          0          0        144   fepilogue.o
+        40          0          0          0          0         60   ffixui.o
+        14          0          0          0          0         68   ffltui.o
+       122          0          0          0          0         72   fmul.o
+
+    ----------------------------------------------------------------------
+      1486         20          0          0          0       1280   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       190         16          0          0          0        272   mc_p.l
+      1296          4          0          0          0       1008   mf_p.l
+
+    ----------------------------------------------------------------------
+      1486         20          0          0          0       1280   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      2812        204        128         12       1028      30409   Grand Totals
+      2812        204        128         12       1028      30409   ELF Image Totals
+      2812        204        128         12          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 2940 (   2.87kB)
+    Total RW  Size (RW Data + ZI Data)              1040 (   1.02kB)
+    Total ROM Size (Code + RO Data + RW Data)       2952 (   2.88kB)
+
+==============================================================================
+

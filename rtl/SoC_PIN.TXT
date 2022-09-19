@@ -1,0 +1,22 @@
+module CortexM0_SoC
+
+input	wire        clk     ,K18
+input	wire        RSTn    ,B16
+
+//SW_DEBUG
+//notice:set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets SWCLK_IBUF]
+inout	wire        SWDIO   ,W19
+input	wire        SWCLK   ,V20
+
+// UART
+output  wire        TXD     ,AB21
+input   wire        RXD     ,AB22
+
+//KEYBOARD
+input   wire [3:0]  col     ,AA10 V10 W10 AA9
+output  wire [3:0]  row     ,AB10 W11 AA11 T14
+
+//LED
+output	wire [7:0]  OUTLED 
+//LED0~LED11
+AA21 P19 P20 R19 T20 T21 U21 U22 W22 W21 V22 AA20
