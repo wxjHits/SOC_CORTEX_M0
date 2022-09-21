@@ -44,11 +44,10 @@ void SystemCoreClockUpdate (void)
  */
 void SystemInit (void)
 {
-  ;
   //SystemCoreClock = __SYSTEM_CLOCK;
   //NVIC_EnableIRQ(UARTTX_IRQn);
   //NVIC_EnableIRQ(SysTick_IRQn);
 
-  //uart_init (UART, (50000000 / 115200), 1,1,1,1,0,0);
+  //uart_init (UART, (__SYSTEM_CLOCK / 115200), 1,1,0,0,0,0);
 }
 

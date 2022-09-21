@@ -104,3 +104,68 @@ void TIMER_Init(uint32_t reload_value,uint32_t inverse_value);
 
 //DELAY
 void delay_ms (uint32_t time);
+
+/**************************************LCD*******************************************/
+void LCD_Init(void);									
+void LCD_DisplayOn(void);													
+void LCD_DisplayOff(void);													
+void LCD_Clear(uint16_t Color);	 											
+void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos);							
+void LCD_DrawPoint(uint16_t x,uint16_t y);									
+void LCD_Fast_DrawPoint(uint16_t x,uint16_t y,uint16_t color);							
+uint16_t  LCD_ReadPoint(uint16_t x,uint16_t y); 										
+void LCD_Draw_Circle(uint16_t x0,uint16_t y0,uint8_t r);						 		
+void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);					
+void LCD_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);		   		
+void LCD_Fill(uint16_t sx,uint16_t sy,uint16_t ex,uint16_t ey,uint16_t color);		   	
+void LCD_Color_Fill(uint16_t sx,uint16_t sy,uint16_t ex,uint16_t ey,uint16_t *color);	
+void LCD_ShowChar(uint16_t x,uint16_t y,uint8_t num,uint8_t mode);			
+void LCD_ShowNum(uint16_t x,uint16_t y,uint32_t num,uint8_t len);  					
+void LCD_ShowxNum(uint16_t x,uint16_t y,uint32_t num,uint8_t len,uint8_t mode);				
+void LCD_ShowString(uint16_t x,uint16_t y,uint16_t width,uint16_t height,uint8_t *p);		
+void LCD_WriteReg(uint16_t LCD_Reg, uint16_t LCD_RegValue);
+uint16_t LCD_ReadReg(uint16_t LCD_Reg);
+void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t size,uint8_t mode);
+void LCD_WriteRAM_Prepare(void);
+void LCD_WriteRAM(uint16_t RGB_Code);
+void LCD_SSD_BackLightSet(uint8_t pwm);							
+void LCD_Scan_Dir(uint8_t dir);									
+void LCD_Display_Dir(uint8_t dir);
+void LCD_Set_Window(uint16_t sx,uint16_t sy,uint16_t width,uint16_t height);
+void Gui_Drawbmp16(uint16_t x,uint16_t y,const unsigned char *p); //??40*40 QQ??
+void LCD_WR_DATA( uint16_t data );
+
+
+/*************************************CAMERA*******************************************/
+void Set_CAMERA_SDA_W(void);
+void Set_CAMERA_SDA_R(void);
+void Set_CAMERA_SCL(void);
+void Clr_CAMERA_SCL(void);
+void Set_CAMERA_RST(void);
+void Clr_CAMERA_RST(void);
+void Set_CAMERA_PWDN(void);
+void Clr_CAMERA_PWDN(void);
+void Set_CAMERA_SDA(void);
+uint32_t Read_CAMERA_SDA(void);
+void Clr_CAMERA_SDA(void);
+void CAMERA_Start(void);
+void CAMERA_Stop(void);
+void CAMERA_Waite(void);
+void CAMERA_Write_Byte(uint8_t data);
+void CAMERA_Command(uint8_t addr_h,uint8_t addr_l,uint8_t data);
+void CAMERA_Data(uint8_t data);
+void CAMERA_Initial(void);
+uint32_t Read_CAMERA_DATA_STATE(void);
+void Set_CAMERA_DATA_STATE(uint32_t state);
+uint32_t Read_CAMERA_DATA_LEN(void);
+uint8_t CAMERA_Read_Byte(void);
+uint8_t CAMERA_Read_Reg(uint16_t reg);
+uint8_t CAMERA_Focus_Init(void);
+void CAMERA_Light_Mode(void);	
+void CAMERA_Color_Saturation(void);
+void CAMERA_Brightness(void);	
+void CAMERA_Contrast(void);	
+void CAMERA_Sharpness(void);	
+uint8_t CAMERA_Focus_Constant(void);
+void CAMERA_NA(void);
+void photo(void);

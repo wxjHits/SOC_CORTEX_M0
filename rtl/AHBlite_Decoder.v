@@ -59,18 +59,19 @@ assign P1_HSEL = (HADDR[31:16] == 16'h2000) ? Port1_en : 1'b0;
 assign P2_HSEL = (HADDR[31:16] == 16'h4000) ? Port2_en : 1'd0;
 /***********************************/
 
-//0X40000010 UART RX DATA
-//0X40000014 UART TX STATE
-//0X40000018 UART TX DATA
+//0X40010000 CAMERA
+//0X40010000-0X4004FFFF CAMERA-Cache
+//0X40050000 CAMERA-Config
 /*Insert UART decoder code there*/
-assign P3_HSEL = 1'b0;
+assign P3_HSEL = (  HADDR[31:16] == 16'h4001||
+                    HADDR[31:16] == 16'h4002||
+                    HADDR[31:16] == 16'h4003||
+                    HADDR[31:16] == 16'h4004||
+                    HADDR[31:16] == 16'h4005) ? Port3_en : 1'd0;
 /***********************************/
 
-//0x40000028 OUT  ENABLE
-//0X40000024 IN DATA
-//0X40000020 OUT DATA
-/*Insert GPIO decoder code there*/
-assign P4_HSEL = 1'b0;
+//0x50000000 LCD
+assign P4_HSEL = (HADDR[31:16] == 16'h5000) ? Port4_en : 1'd0;
 /***********************************/
 
 endmodule

@@ -442,6 +442,16 @@
               <FileType>5</FileType>
               <FilePath>..\Software\lcdfont.h</FilePath>
             </File>
+            <File>
+              <FileName>camera.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Software\camera.c</FilePath>
+            </File>
+            <File>
+              <FileName>camera_initial_reg_file.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Software\camera_initial_reg_file.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

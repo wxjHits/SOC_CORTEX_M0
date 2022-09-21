@@ -7,3 +7,4 @@
 .\cortexm0_driver.o: ..\Software\core_cmInstr.h
 .\cortexm0_driver.o: ..\Software\core_cmFunc.h
 .\cortexm0_driver.o: D:\Program Files\Keil_V5\ARM\ARMCC\Bin\..\include\string.h
+.\cortexm0_driver.o: ..\Software\lcdfont.h

@@ -1,18 +1,43 @@
+/****************************/
+//作者:Wei Xuejing
+//邮箱:2682152871@qq.com
+//描述:SoC-design based on kernel--Cortex_M0
+//时间:create 2022.09.20
+/****************************/
 
 module CortexM0_SoC (
-        input	wire        clk     ,
-        input	wire        RSTn    ,
-        inout	wire        SWDIO   ,
-        input	wire        SWCLK   ,
+        input	wire        clk         ,
+        input	wire        RSTn        ,
+        inout	wire        SWDIO       ,
+        input	wire        SWCLK       ,
 
         // UART
-        output  wire        TXD     ,
-        input   wire        RXD     ,
+        output  wire        TXD         ,
+        input   wire        RXD         ,
         //KEYBOARD
-        input   wire [3:0]  col     ,
-        output  wire [3:0]  row     ,
+        input   wire [3:0]  col         ,
+        output  wire [3:0]  row         ,
         //LED
-        output	wire [7:0]  OUTLED
+        output	wire [7:0]  OUTLED      ,
+        //LCD
+        output  wire        LCD_CS      ,
+        output  wire        LCD_RS      ,
+        output  wire        LCD_WR      ,
+        output  wire        LCD_RD      ,
+        output  wire        LCD_RST     ,
+        output  wire        LCD_BL_CTR  ,
+        output  wire [15:0] LCD_DATA    ,
+
+        // CAMERA
+        output  wire        CAMERA_PWDN ,
+        output  wire        CAMERA_RST  ,
+        output  wire        CAMERA_SCL  ,
+        inout   wire        CAMERA_SDA  ,
+        input   wire        CAMERA_PCLK ,
+        input   wire        CAMERA_VSYNC,
+        input   wire        CAMERA_HREF ,
+        input   wire [7:0]  CAMERA_DATA
+
     );
 
     //------------------------------------------------------------------------------
@@ -731,5 +756,86 @@ module CortexM0_SoC (
                   .PWM_out  (),   //PWM mode out
                   .TIMERINT (TIMERINT)   // Timer interrupt output
               );
+
+    //AHB4 LCD 0x5000_0000
+    ahb_lcd lcd(
+                .HCLK       (clk        ),
+                .HRESETn    (cpuresetn  ),
+                .HSEL       (HSEL_P4    ),
+                .HADDR      (HADDR_P4   ),
+                .HTRANS     (HTRANS_P4  ),
+                .HSIZE      (HSIZE_P4   ),
+                .HPROT      (HPROT_P4   ),
+                .HWRITE     (HWRITE_P4  ),
+                .HWDATA     (HWDATA_P4  ),
+                .HREADY     (HREADY_P4  ),
+
+                .HREADYOUT  (HREADYOUT_P4),
+                .HRDATA     (HRDATA_P4  ),
+                .HRESP      (HRESP_P4   ),
+
+                .LCD_CS     (LCD_CS     ),
+                .LCD_RS     (LCD_RS     ),
+                .LCD_WR     (LCD_WR     ),
+                .LCD_RD     (LCD_RD     ),
+                .LCD_RST    (LCD_RST    ),
+                .LCD_BL_CTR (LCD_BL_CTR ),
+                .LCD_DATA   (LCD_DATA   )
+            );
+
+
+    //------------------------------------------------------------------------------
+    // AHB DEFAULT SLAVE RESERVED FOR Camera
+    //------------------------------------------------------------------------------
+    wire    [15:0]    Camera_ADDR;
+    wire    [31:0]    Camera_RDATA;
+    wire              Camera_VALID;
+    wire              Camera_READY;
+
+    ahb_camera u_ahb_camera(
+                   /* Connect to Interconnect Port 4 */
+                   .HCLK                   (clk),
+                   .HRESETn                (cpuresetn),
+                   .HSEL                   (HSEL_P3    ),
+                   .HADDR                  (HADDR_P3   ),
+                   .HPROT                  (HPROT_P3   ),
+                   .HSIZE                  (HSIZE_P3   ),
+                   .HTRANS                 (HTRANS_P3  ),
+                   .HWDATA                 (HWDATA_P3  ),
+                   .HWRITE                 (HWRITE_P3  ),
+                   .HRDATA                 (HRDATA_P3  ),
+                   .HREADY                 (HREADY_P3  ),
+                   .HREADYOUT              (HREADYOUT_P3),
+                   .HRESP                  (HRESP_P3   ),
+
+                   .ADDR                   (Camera_ADDR),
+                   .RDATA                  (Camera_RDATA),
+                   .DATA_VALID             (Camera_VALID),
+                   .DATA_READY             (Camera_READY),
+
+                   .PWDN                   (CAMERA_PWDN),
+                   .RST                    (CAMERA_RST),
+                   .CAMERA_SCL             (CAMERA_SCL),
+                   .CAMERA_SDA             (CAMERA_SDA)
+                   /**********************************/
+               );
+
+    //------------------------------------------------------------------------------
+    // CAMERA
+    //------------------------------------------------------------------------------
+
+    CAMERA_Capture CAMERA(
+                       .HCLK                           (clk),
+                       .PCLK                           (CAMERA_PCLK),
+                       .HRESETn                        (cpuresetn),
+                       .DATA_VALID                     (Camera_VALID),
+                       .DATA_READY                     (Camera_READY),
+                       .DualRAM_RADDR                  (Camera_ADDR),
+                       .DualRAM_RDATA                  (Camera_RDATA),
+                       .Camera_idata                   (CAMERA_DATA),
+                       .VSYNC                          (CAMERA_VSYNC),
+                       .HREF                           (CAMERA_HREF),
+                       .datavalid_test                 ()
+                   );
 
 endmodule
