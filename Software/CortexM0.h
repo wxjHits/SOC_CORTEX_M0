@@ -160,9 +160,27 @@ typedef struct{
     volatile uint32_t CLR_INT;
     volatile uint32_t INVERSE_VALUE;
 }TIMERType;
-
 #define TIMER   ((TIMERType*)TIMER_BASE)
 
+// SPI 
+// BASE_ADDR:0x40004000
+// 0x00 RW   [0]   SPI_CS
+// 0x04 RW   [7:0] CLK_DIV
+// 0x08 RW   [7:0] DATA_TX
+// 0x0C RW   [0]   TX_REQ
+// 0x10 R    [7:0] DATA_RX
+// 0x14 R    [0]   SPI_READY
+#define SPI_BASE         (APB_BASE+0x4000)
+typedef struct{
+    volatile uint32_t SPI_CS;
+    volatile uint32_t SPI_CLK_DIV;
+    volatile uint32_t SPI_DATA_TX;
+    volatile uint32_t SPI_TX_REQ;
+    volatile uint32_t SPI_DATA_RX;
+    volatile uint32_t SPI_READY;
+}SPIType;
+
+#define SPI   ((SPIType*)SPI_BASE)
 //LCD
 /**********************************************/
 /*   LCD_CS           0X5000_0000             */

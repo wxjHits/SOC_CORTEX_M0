@@ -19,6 +19,11 @@ module CortexM0_SoC (
         output  wire [3:0]  row         ,
         //LED
         output	wire [7:0]  OUTLED      ,
+        //SPI
+        output  wire        SPI_CLK     ,
+        output  wire        SPI_CS      ,
+        output  wire        SPI_MOSI    ,
+        input   wire        SPI_MISO    ,
         //LCD
         output  wire        LCD_CS      ,
         output  wire        LCD_RS      ,
@@ -501,6 +506,7 @@ module CortexM0_SoC (
     wire    [31:0]  PRDATA_APBP3;
     wire            PSLVERR_APBP3;
 
+    //SPI
     wire            PSEL_APBP4;
     wire            PREADY_APBP4;
     wire    [31:0]  PRDATA_APBP4;
@@ -512,7 +518,6 @@ module CortexM0_SoC (
     wire    [31:0]  PRDATA_APBP5;
     wire            PSLVERR_APBP5;
 
-    //SPI
     wire            PSEL_APBP6;
     wire            PREADY_APBP6;
     wire    [31:0]  PRDATA_APBP6;
@@ -565,10 +570,10 @@ module CortexM0_SoC (
                             .PRDATA3                            (PRDATA_APBP3),
                             .PSLVERR3                           (PSLVERR_APBP3),
 
-                            .PSEL4                              (),
-                            .PREADY4                            (1'b1),
-                            .PRDATA4                            (32'b0),
-                            .PSLVERR4                           (1'b0),
+                            .PSEL4                              (PSEL_APBP4),
+                            .PREADY4                            (PREADY_APBP4),
+                            .PRDATA4                            (PRDATA_APBP4),
+                            .PSLVERR4                           (PSLVERR_APBP4),
 
                             .PSEL5                              (),
                             .PREADY5                            (1'b1),
@@ -739,24 +744,43 @@ module CortexM0_SoC (
 
     //APB3 TIMER
     apb_timer u_apb_timer (
-                  .PCLK     (clk),   // PCLK for timer operation
-                  .PCLKG    (clk),   // Gated clock
-                  .PRESETn  (cpuresetn),   // Reset
+                .PCLK     (clk),   // PCLK for timer operation
+                .PCLKG    (clk),   // Gated clock
+                .PRESETn  (cpuresetn),   // Reset
 
-                  .PSEL     (PSEL_APBP3),   // Device select
-                  .PADDR    (PADDR[15:0]),   // Address
-                  .PENABLE  (PENABLE),   // Transfer control
-                  .PWRITE   (PWRITE),   // Write control
-                  .PWDATA   (PWDATA),   // Write data
-                  .ECOREVNUM(4'b0),   // Engineering-change-order revision bits
-                  .PRDATA   (PRDATA_APBP3),   // Read data
-                  .PREADY   (PREADY_APBP3),   // Device ready
-                  .PSLVERR  (PSLVERR_APBP3),   // Device error response
+                .PSEL     (PSEL_APBP3),   // Device select
+                .PADDR    (PADDR[15:0]),   // Address
+                .PENABLE  (PENABLE),   // Transfer control
+                .PWRITE   (PWRITE),   // Write control
+                .PWDATA   (PWDATA),   // Write data
+                .ECOREVNUM(4'b0),   // Engineering-change-order revision bits
+                .PRDATA   (PRDATA_APBP3),   // Read data
+                .PREADY   (PREADY_APBP3),   // Device ready
+                .PSLVERR  (PSLVERR_APBP3),   // Device error response
 
-                  .PWM_out  (),   //PWM mode out
-                  .TIMERINT (TIMERINT)   // Timer interrupt output
-              );
+                .PWM_out  (),   //PWM mode out
+                .TIMERINT (TIMERINT)   // Timer interrupt output
+        );
 
+    //APB4 SPI
+    apb_spi u_apb_spi(
+                    .PCLK     (clk),   // PCLK for timer operation
+                    .PCLKG    (clk),   // Gated clock
+                    .PRESETn  (cpuresetn),   // Reset
+                    .PSEL     (PSEL_APBP4),   // Device select
+                    .PADDR    (PADDR[15:0]),   // Address
+                    .PENABLE  (PENABLE),   // Transfer control
+                    .PWRITE   (PWRITE),   // Write control
+                    .PWDATA   (PWDATA),   // Write data
+                    .ECOREVNUM(4'b0),   // Engineering-change-order revision bits
+                    .PRDATA   (PRDATA_APBP4),   // Read data
+                    .PREADY   (PREADY_APBP4),   // Device ready
+                    .PSLVERR  (PSLVERR_APBP4),   // Device error response
+                    .SPI_CLK  (SPI_CLK ),   //SPI clk
+                    .SPI_CS   (SPI_CS  ),   //SPI cs
+                    .SPI_MOSI (SPI_MOSI),   //SPI mosi
+                    .SPI_MISO (SPI_MISO)    //SPI miso
+    ); 
     //AHB4 LCD 0x5000_0000
     ahb_lcd lcd(
                 .HCLK       (clk        ),

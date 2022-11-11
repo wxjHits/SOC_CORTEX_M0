@@ -32,3 +32,7 @@ SCL        SDA        D0        D2       D4       D6       PCLK        PWDN
 N13       P15         R18      N17      N18      L19       N20         N22
 VSY       HRE         RST      D1        D3       D5       D7          FLASH 
 N14       R16         T18      P17       N19      L20       M20        M22
+
+SPI test
+SPI_CS    SPI_CLK   SPI_MOSI    SPI_MISO
+M21        K21         J14              H13

@@ -1,13 +1,14 @@
-`timescale 1 ps/ 1 ps
+`timescale 1 ns/ 1 ps
 module CortexM0_SoC_vlg_tst();
 
 reg clk;
 reg RSTn;
-            
-           
+reg SPI_MISO;
+
 CortexM0_SoC i1 (
     .clk(clk),
-    .RSTn(RSTn)
+    .RSTn(RSTn),
+    .SPI_MISO(SPI_MISO)
 );
 
 initial begin                                                  
@@ -21,4 +22,11 @@ always begin
     #1 clk = ~clk;
 end       
 
+initial begin
+    SPI_MISO = 0;
+    #4200
+    SPI_MISO = 1;
+    #180
+    SPI_MISO = 0;
+end
 endmodule

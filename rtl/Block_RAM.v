@@ -14,7 +14,7 @@ reg [31:0] mem [(2**ADDR_WIDTH-1):0];
 
 //修改路径
 initial begin
-    $readmemh("C:/Users/hp/Desktop/an_AHB_APB_SYSTEM_KEYBOARD/Keil/image.hex",mem);
+    $readmemh("C:/Users/hp/Desktop/SOC_CORTEX_M0/Keil/image.hex",mem);
 end
 
 always@(posedge clka) begin
