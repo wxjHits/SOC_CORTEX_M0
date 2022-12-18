@@ -32,14 +32,15 @@ module keyboard_scan(
         	row <= {row[2:0],row[3]}; 
     end
     
-    always@(negedge scan_clk) 
+    always@(negedge scan_clk)begin
         case(row)
-            4'b1110 : key[15:12] <= col;
-            4'b1101 : key[11:8] <= col;
-            4'b1011 : key[7:4] <= col;
-            4'b0111 : key[3:0] <= col;
+            4'b1110 : key[03:00]<= col;
+            4'b1101 : key[07:04]<= col;
+            4'b1011 : key[11:08]<= col;
+            4'b0111 : key[15:12]<= col;
             default : key <= 0;
         endcase
+    end
         
 endmodule
       
