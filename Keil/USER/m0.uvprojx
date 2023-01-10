@@ -48,11 +48,11 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\</OutputDirectory>
+          <OutputDirectory>.\Objects\</OutputDirectory>
           <OutputName>m0</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>0</CreateHexFile>
+          <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -82,8 +82,8 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>1</RunUserProg2>
-            <UserProg1Name>fromelf -cvf .\m0.axf --vhx --32x1 -o image.hex</UserProg1Name>
-            <UserProg2Name>fromelf -cvf .\m0.axf -o image.txt</UserProg2Name>
+            <UserProg1Name>fromelf -cvf .\Objects\m0.axf --vhx --32x1 -o image.hex</UserProg1Name>
+            <UserProg2Name>fromelf -cvf .\Objects\m0.axf -o image.txt</UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
@@ -387,6 +387,11 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>pic_resource.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\pic_resource.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -456,6 +461,11 @@
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\DEVICE\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>malloc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DEVICE\malloc.c</FilePath>
             </File>
           </Files>
         </Group>

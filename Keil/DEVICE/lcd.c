@@ -686,3 +686,60 @@ void Gui_Drawbmp16(uint16_t x,uint16_t y,const unsigned char *p)
 	}	
 	LCD_Set_Window(0,0,lcddev.width-1,lcddev.height-1);//?????????	
 }
+
+//画二值图像，最好以Byte为单位
+void Paint_PicBin(uint16_t x0,uint16_t y0,uint16_t width_byte,uint16_t height,uint16_t color,uint8_t *p)
+{
+    uint16_t i,j,temp;
+    uint16_t x_pos,y_pos;
+    POINT_COLOR=color;
+    
+    for(i=0;i<width_byte*height;i++){
+        temp=*(p+i);//??????
+        
+        x_pos=x0+(i%width_byte)*8;
+        y_pos=y0+i/width_byte;
+        
+		for(j=8;j>0;j--){
+            if(temp&0x01){
+                LCD_DrawPoint(x_pos+j-1,y_pos);//??
+            }
+            temp=temp>>1;
+        }
+    }
+}
+
+//为nes游戏设计的函数，一个图案由2个8x8的点阵组成，每一个点有00，01，10，11四种组合，可以赋予不同颜色
+void Paint8x8x2bin(uint16_t x0,uint16_t y0,uint8_t *p){
+    uint16_t i,j;
+    uint8_t temp;
+    uint8_t temp_h;
+		for(i=0;i<1*8;i++)
+		{
+			temp=*(p+i);
+			temp_h=*(p+i+8);
+			for(j=8;j>0;j--)
+			{
+                
+				 if((temp&0x01)&&(temp_h&0x01))
+				 {
+                     LCD_Fast_DrawPoint(x0+j-1,y0+i,RED);
+				 }
+                 else if((temp&0x01)&&(~(temp_h&0x01)))
+				 {
+                     LCD_Fast_DrawPoint(x0+j-1,y0+i,BLUE);
+				 }
+                 else if((~(temp&0x01))&&(temp_h&0x01))
+				 {
+                     LCD_Fast_DrawPoint(x0+j-1,y0+i,GREEN);
+				 }
+                 else if(~(temp&0x01)&&~(temp_h&0x01))
+				 {
+					 LCD_Fast_DrawPoint(x0+j-1,y0+i,BLACK);
+				 }
+				 temp=temp>>1;
+                 temp_h=temp_h>>1;
+			}
+		}
+}
+

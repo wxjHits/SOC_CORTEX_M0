@@ -63,17 +63,16 @@ void UARTOVRHandler(void) {
 
 void KEY0(void){
     LED_toggle(0);
-    photo();
-    uint16_t x, y;
-    for (x = 0; x < 240; x++){
-        for (y = 0; y < 320; y++) 
-            LCD_Fast_DrawPoint(y, x, CAMERA->CAMERA_VALUE[x][y]);
-    }
+//    photo();
+//    uint16_t x, y;
+//    for (x = 0; x < 240; x++){
+//        for (y = 0; y < 320; y++) 
+//            LCD_Fast_DrawPoint(y, x, CAMERA->CAMERA_VALUE[x][y]);
+//    }
 }
 
 void KEY1(void){
     LED_toggle(1);
-    printf("KEY1 INTR OCCURED!\n");
 }
 
 
@@ -88,7 +87,6 @@ void KEY3(void){
 //Timer
 void Timer_Handler(void){
     LED_toggle(7);
-    printf("timer int occur!!!\n");
 }
 
 

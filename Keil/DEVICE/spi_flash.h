@@ -48,11 +48,14 @@ uint16_t SPI_Flash_ReadID(void);
 uint8_t  SPI_Flash_ReadSR(void);
 void SPI_FLASH_Clear_SR(void);
 void SPI_FLASH_Write_SR(uint8_t sr);
-void SPI_FLASH_Write_Enable(void);  //дʹ�� 
-void SPI_FLASH_Write_Disable(void);	//дʧ��
+void SPI_FLASH_Write_Enable(void);
+void SPI_FLASH_Write_Disable(void);
 void SPI_Flash_Wait_Busy(void);
 void SPI_Flash_Erase_Chip(void);
+void SPI_Flash_Erase_Block(uint32_t Dst_BlockNum_Addr);
 void SPI_Flash_Erase_Sector(uint32_t Dst_Addr);
 void SPI_Flash_Write_Page(uint8_t* pBuffer,uint32_t WriteAddr,uint16_t NumByteToWrite);
 void SPI_Flash_Read(uint8_t* pBuffer,uint32_t ReadAddr,uint16_t NumByteToRead);
+void SPI_Flash_Write_NoCheck(uint8_t* pBuffer,uint32_t WriteAddr,uint16_t NumByteToWrite);
+void SPI_Flash_Write_Max65536(uint8_t* pBuffer,uint32_t WriteAddr,uint16_t NumByteToWrite);
 #endif

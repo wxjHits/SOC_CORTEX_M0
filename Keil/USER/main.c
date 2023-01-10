@@ -2,11 +2,14 @@
 #include "camera.h"
 #include "uart.h"
 #include "led.h"
+#include "pic_resource.h"
 #include "lcd.h"
 #include "key.h"
 #include "timer.h"
 #include "spi_flash.h"
 #include "systick.h"
+#include "malloc.h"
+#include "stdlib.h"
 
 int main(void)
 {   
@@ -14,33 +17,50 @@ int main(void)
     uart_init (UART, (50000000 / 115200), 1,1,0,0,0,0);
     SPI_Init(100);
     LCD_Init();
-    KEY_INIT(0xf);
-    CAMERA_Initial();
-    TIMER_Init(50000000,0,1);
+//    KEY_INIT(0xf);
+//    CAMERA_Initial();//占用较多的ROM资源,有许多初始化的const uint8_t 数据，共大约
+//    TIMER_Init(50000000,0,1);
+
+    uint8_t *mario_8192=0;
+    mario_8192=mymalloc(4096);
+//    SPI_Flash_Erase_Block(0);
+//    SPI_Flash_Erase_Sector(0);
+//    SPI_Flash_Write_NoCheck(mario_Picture_all,0,8192);
+    SPI_Flash_Read(mario_8192,0,4096);
+    for(int i=0;i<128;i++){
+        uint8_t x=0;
+        uint8_t y=0;
+        x=i%32;y=i/32;
+        Paint8x8x2bin(x*8,y*8,mario_8192+i*16);
+    }
+    Paint8x8x2bin(0,200,mario_8192+112*16);
+    Paint8x8x2bin(8,200,mario_8192+113*16);
+    Paint8x8x2bin(0,208,mario_8192+114*16);
+    Paint8x8x2bin(8,208,mario_8192+115*16);
     
-    printf("/**************************test start!**************************/\n");
-    uint8_t* p;
-    p="to be,or not to be?that is a question!";
+    myfree(mario_8192);
     
-    uint8_t spi_sr ;
-    spi_sr=SPI_Flash_ReadSR();
-    uint16_t flash_id;
-    flash_id=SPI_Flash_ReadID();
-    SPI_Flash_Erase_Sector(0);
-    SPI_Flash_Write_Page(p,0,30);
-    //SPI_Flash_Erase_Chip();
-    uint8_t* spi_rx_buffer;
-    SPI_Flash_Read(spi_rx_buffer,6,30);
-    printf("spi_sr=%x,flash_id=%x\n",spi_sr,flash_id);
-    printf("p=%s\n",p);
-    printf("spi_rx_buffer=%s\n",spi_rx_buffer);
+    mario_8192=mymalloc(4096);
+    SPI_Flash_Read(mario_8192,4096,4096);
+    for(int i=0;i<128;i++){
+        uint8_t x=0;
+        uint8_t y=0;
+        x=i%32;y=i/32;
+        Paint8x8x2bin(x*8,y*8+100,mario_8192+i*16);
+    }
+    myfree(mario_8192);
     
-    LCD_ShowString(0,0,240,320,p);
-    LCD_ShowString(0,0,240,320,spi_rx_buffer);
+    delay_ms(1000);
     
+    LCD_Clear(GRAYBLUE);
+    
+    uint16_t y_pos=0;
     while(1)
     {
-        //printf("spi_rx_buffer=%s\n",p);
-        delay_ms(1000);
+        Paint_PicBin(40,50,30,72,RED,gImage_backgroud_00);
+        Paint_PicBin(10,10,6,32,WHITE,gImage_hero_48x32);
+        Paint_PicBin(100,10,4,32,WHITE,gImage_enemy01_32x32);
+        Paint_PicBin(150,10,6,48,WHITE,gImage_enemy02_48x48);
+        delay_ms(500);
     }
 }

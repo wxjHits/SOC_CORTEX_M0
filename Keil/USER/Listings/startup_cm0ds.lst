@@ -371,11 +371,11 @@ ARM Macro Assembler    Page 6
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
-ork --depend=.\startup_cm0ds.d -o.\startup_cm0ds.o -I.\RTE\_Target_1 -I"D:\Prog
-ram Files\Keil_V5\Arm\Packs\Keil\V2M-MPS2_CMx_BSP\1.7.1\Device\CMSDK_CM0\Includ
-e" -I"D:\Program Files\Keil_V5\ARM\CMSIS\Include" --predefine="__MICROLIB SETA 
-1" --predefine="__UVISION_VERSION SETA 528" --predefine="CMSDK_CM0 SETA 1" --li
-st=.\listings\startup_cm0ds.lst ..\CORE\startup_CM0DS.s
+ork --depend=.\objects\startup_cm0ds.d -o.\objects\startup_cm0ds.o -I.\RTE\_Tar
+get_1 -I"D:\Program Files\Keil_V5\Arm\Packs\Keil\V2M-MPS2_CMx_BSP\1.7.1\Device\
+CMSDK_CM0\Include" -I"D:\Program Files\Keil_V5\ARM\CMSIS\Include" --predefine="
+__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 528" --predefine="CMSDK_
+CM0 SETA 1" --list=.\listings\startup_cm0ds.lst ..\CORE\startup_CM0DS.s
 
 
 

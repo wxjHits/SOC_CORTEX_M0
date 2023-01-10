@@ -144,5 +144,9 @@ void LCD_Set_Window(uint16_t sx,uint16_t sy,uint16_t width,uint16_t height);
 void Gui_Drawbmp16(uint16_t x,uint16_t y,const unsigned char *p); //??40*40 QQ??
 void LCD_WR_DATA( uint16_t data );
 
+//2023.01.10 ADD 
+void Paint_PicBin(uint16_t x0,uint16_t y0,uint16_t width_byte,uint16_t height_byte,uint16_t color,uint8_t *p);
+void Paint8x8x2bin(uint16_t x0,uint16_t y0,uint8_t *p);
+
 #endif
 
