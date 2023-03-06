@@ -387,11 +387,6 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
-            <File>
-              <FileName>pic_resource.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\pic_resource.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -418,54 +413,14 @@
           <GroupName>DEVICE</GroupName>
           <Files>
             <File>
-              <FileName>camera.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\DEVICE\camera.c</FilePath>
-            </File>
-            <File>
-              <FileName>key.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\DEVICE\key.c</FilePath>
-            </File>
-            <File>
-              <FileName>lcd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\DEVICE\lcd.c</FilePath>
-            </File>
-            <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\DEVICE\led.c</FilePath>
             </File>
             <File>
-              <FileName>Retarget.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\DEVICE\Retarget.c</FilePath>
-            </File>
-            <File>
-              <FileName>spi_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\DEVICE\spi_flash.c</FilePath>
-            </File>
-            <File>
               <FileName>systick.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\DEVICE\systick.c</FilePath>
-            </File>
-            <File>
-              <FileName>timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\DEVICE\timer.c</FilePath>
-            </File>
-            <File>
-              <FileName>uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\DEVICE\uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>malloc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\DEVICE\malloc.c</FilePath>
             </File>
           </Files>
         </Group>

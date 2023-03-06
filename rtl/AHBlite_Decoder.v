@@ -53,25 +53,17 @@ assign P0_HSEL = (HADDR[31:16] == 16'h0000) ? Port0_en : 1'd0;
 assign P1_HSEL = (HADDR[31:16] == 16'h2000) ? Port1_en : 1'b0;
 /***********************************/
 
-//AHB_TO_APB_BRIDGE-----------------------------
+//
 //0X40000000
-/*Insert WaterLight decoder code there*/
 assign P2_HSEL = (HADDR[31:16] == 16'h4000) ? Port2_en : 1'd0;
 /***********************************/
 
-//0X40010000 CAMERA
-//0X40010000-0X4004FFFF CAMERA-Cache
-//0X40050000 CAMERA-Config
-/*Insert UART decoder code there*/
-assign P3_HSEL = (  HADDR[31:16] == 16'h4001||
-                    HADDR[31:16] == 16'h4002||
-                    HADDR[31:16] == 16'h4003||
-                    HADDR[31:16] == 16'h4004||
-                    HADDR[31:16] == 16'h4005) ? Port3_en : 1'd0;
+//
+assign P3_HSEL = 0;
 /***********************************/
 
-//0x50000000 LCD
-assign P4_HSEL = (HADDR[31:16] == 16'h5000) ? Port4_en : 1'd0;
+//
+assign P4_HSEL = 0;
 /***********************************/
 
 endmodule
