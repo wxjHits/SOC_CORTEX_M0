@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="CortexM0_SoC_vlg_tst_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="CortexM0_SoC_vlg_tst" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="3870610000fs"></ZoomStartTime>
+      <ZoomEndTime time="3880580001fs"></ZoomEndTime>
+      <Cursor1Time time="3873000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="271"></NameColumnWidth>
+      <ValueColumnWidth column_width="260"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/RSTn" type="logic">
+      <obj_property name="ElementShortName">RSTn</obj_property>
+      <obj_property name="ObjectShortName">RSTn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HCLK" type="logic">
+      <obj_property name="ElementShortName">HCLK</obj_property>
+      <obj_property name="ObjectShortName">HCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HRESETn" type="logic">
+      <obj_property name="ElementShortName">HRESETn</obj_property>
+      <obj_property name="ObjectShortName">HRESETn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HSEL" type="logic">
+      <obj_property name="ElementShortName">HSEL</obj_property>
+      <obj_property name="ObjectShortName">HSEL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HADDR" type="array">
+      <obj_property name="ElementShortName">HADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HTRANS" type="array">
+      <obj_property name="ElementShortName">HTRANS[1:0]</obj_property>
+      <obj_property name="ObjectShortName">HTRANS[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HSIZE" type="array">
+      <obj_property name="ElementShortName">HSIZE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">HSIZE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HPROT" type="array">
+      <obj_property name="ElementShortName">HPROT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">HPROT[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HWRITE" type="logic">
+      <obj_property name="ElementShortName">HWRITE</obj_property>
+      <obj_property name="ObjectShortName">HWRITE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HWDATA" type="array">
+      <obj_property name="ElementShortName">HWDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HWDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HREADY" type="logic">
+      <obj_property name="ElementShortName">HREADY</obj_property>
+      <obj_property name="ObjectShortName">HREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HREADYOUT" type="logic">
+      <obj_property name="ElementShortName">HREADYOUT</obj_property>
+      <obj_property name="ObjectShortName">HREADYOUT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HRDATA" type="array">
+      <obj_property name="ElementShortName">HRDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HRDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/HRESP" type="logic">
+      <obj_property name="ElementShortName">HRESP</obj_property>
+      <obj_property name="ObjectShortName">HRESP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/led_out" type="array">
+      <obj_property name="ElementShortName">led_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/read_en" type="logic">
+      <obj_property name="ElementShortName">read_en</obj_property>
+      <obj_property name="ObjectShortName">read_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/write_en" type="logic">
+      <obj_property name="ElementShortName">write_en</obj_property>
+      <obj_property name="ObjectShortName">write_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/addr_reg" type="array">
+      <obj_property name="ElementShortName">addr_reg[1:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_reg[1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/CortexM0_SoC_vlg_tst/i1/u_AHBlite_LED/wr_en_reg" type="logic">
+      <obj_property name="ElementShortName">wr_en_reg</obj_property>
+      <obj_property name="ObjectShortName">wr_en_reg</obj_property>
+   </wvobject>
+</wave_config>

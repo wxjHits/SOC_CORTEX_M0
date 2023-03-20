@@ -40,15 +40,12 @@ end
 always@(posedge HCLK) begin
     if(~HRESETn)
         led_out <= 8'h00;
-    else  if(wr_en_reg)begin
-        if(addr_reg[3:2]==2'b00)
+    else  if(wr_en_reg&&addr_reg==2'b01)begin
           led_out <= HWDATA[7:0];
-        else
-          led_out <= led_out;
     end
 end
 
-assign HRDATA = (read_en==1 && addr_reg==0) ? {24'b0,led_out} : 32'b0;
+assign HRDATA =  addr_reg==2'b01 ? {24'b0,led_out} : 32'b0;
 
 endmodule
 

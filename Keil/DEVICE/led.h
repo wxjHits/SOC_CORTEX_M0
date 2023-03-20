@@ -5,7 +5,7 @@
 #include <stdint.h>
 
 //LED
-#define LED_BASE         (0x40000000)
+#define LED_BASE         (0x40000004)
 //LED
 void led_ctrl(uint8_t num,uint8_t on);
 void LED_on(uint8_t num);
